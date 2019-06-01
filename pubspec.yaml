@@ -22,6 +22,8 @@ dependencies:
   cloud_firestore: any
   firestore_helpers: any
   get_it: any
+  json_serializable: any
+  json_annotation: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -30,6 +32,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:  
 
 
 # For information on the generic Dart part of this file, see the
