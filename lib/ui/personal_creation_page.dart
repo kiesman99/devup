@@ -1,6 +1,7 @@
 import 'package:devup/backend.dart';
 import 'package:devup/components/choice_chips.dart';
 import 'package:devup/components/selection_chip.dart';
+import 'package:devup/services/database_service.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,13 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
+      onPressed: () async {
+         var user=  await backend<DatabaseService>().getCurrentUser();
+         user.userName = 'test';
+         await backend<DatabaseService>().saveUser();
+
+      },),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

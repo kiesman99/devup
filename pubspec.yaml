@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   cloud_firestore: any
+  firebase: any
   firestore_helpers: any
   get_it: any
   json_serializable: any
