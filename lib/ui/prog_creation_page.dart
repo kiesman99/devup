@@ -17,7 +17,7 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
   final TextEditingController occupationController = new TextEditingController();
 
   double sliderValue = 0.0;
-  final List<String> sliderValues = ["Beginner", "Intermediate", "Advanced"];
+  final List<String> sliderValues = backend<ResourceService>().experience;
 
   final TextStyle headingStyle = TextStyle(
     fontSize: 20.0

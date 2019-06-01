@@ -47,4 +47,6 @@ class ResourceService
   List<String> languages = const ['English', 'German', 'Dutch', 'Spanish','French'];
 
   List<String> genders = const ['Male', 'Female', 'Rather not say'];
+
+  List<String> experience = const ["Beginner", "Intermediate", "Advanced"];
 }
