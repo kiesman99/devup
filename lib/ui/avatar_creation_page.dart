@@ -1,6 +1,8 @@
 import 'package:devup/components/setup_navigation.dart';
 import 'package:devup/components/svg_holder.dart';
+import 'package:devup/model/user.dart';
 import 'package:devup/services/resource_service.dart';
+import 'package:devup/ui/prog_creation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,6 +17,15 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
   PageController samplecontroller;
 
+  PageController hairController;
+  PageController eyesController;
+  PageController noseController;
+  PageController beardController;
+  PageController mouthController;
+
+
+  String hair, eyes, nose, beard, mouth;
+
   static List<String> _stackElements = [
     "SKIN",
     "HAIR",
@@ -28,10 +39,40 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
   @override
   void initState() {
 
+    // init controllers
 
+    hairController = new PageController();
+    eyesController = new PageController();
+    noseController = new PageController();
+    beardController = new PageController();
+    mouthController = new PageController();
+
+    hairController.addListener(() => _handleChange("hair"));
 
     super.initState();
     samplecontroller = new PageController();
+  }
+
+  void _handleChange(String type){
+    switch(type){
+      case "hair":
+        //
+        break;
+      case "eyes":
+        break;
+      case "nose":
+        break;
+      case "beard":
+        break;
+      case "mouth":
+        break;
+      default:
+        break;
+    }
+
+    setState(() {
+
+    });
   }
 
 
@@ -54,7 +95,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
               //hair
               PageView.builder(
                 itemCount: backend<ResourceService>().avatarParts.hairs.length,
-                controller: samplecontroller,
+                controller: hairController,
                 itemBuilder: (context, index){
                   String assetName = backend<ResourceService>().avatarParts.hairs["Hair" + (index + 1).toString()];
                   return SVGHolder(
@@ -73,7 +114,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                       height: 100.0,
                       child: PageView.builder(
                         itemCount: backend<ResourceService>().avatarParts.eyes.length,
-                        controller: samplecontroller,
+                        controller: eyesController,
                         itemBuilder: (context, index){
                           String assetName = backend<ResourceService>().avatarParts.eyes["Eyes" + (index + 1).toString()];
                           return SVGHolder(
@@ -91,7 +132,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                       height: 100.0,
                       child: PageView.builder(
                         itemCount: backend<ResourceService>().avatarParts.noses.length,
-                        controller: samplecontroller,
+                        controller: noseController,
                         itemBuilder: (context, index){
                           String assetName = backend<ResourceService>().avatarParts.noses["Nose" + (index + 1).toString()];
                           return SVGHolder(
@@ -109,7 +150,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                       height: 100.0,
                       child: PageView.builder(
                         itemCount: backend<ResourceService>().avatarParts.beards.length,
-                        controller: samplecontroller,
+                        controller: beardController,
                         itemBuilder: (context, index){
                           String assetName = backend<ResourceService>().avatarParts.beards["Beard" + (index + 1).toString()];
                           return SVGHolder(
@@ -127,7 +168,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                       height: 100.0,
                       child: PageView.builder(
                         itemCount: backend<ResourceService>().avatarParts.mouths.length,
-                        controller: samplecontroller,
+                        controller: mouthController,
                         itemBuilder: (context, index){
                           String assetName = backend<ResourceService>().avatarParts.mouths["Mouth" + (index + 1).toString()];
                           return SVGHolder(
@@ -147,7 +188,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
       ),
       bottomNavigationBar: SetupNavigationBar.noBackButton(
         nextPageCallback: () {
-          
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ProgrammingCreationPage()));
         },
       ),
     );
