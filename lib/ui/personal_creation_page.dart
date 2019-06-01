@@ -123,7 +123,7 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
         nextPageCallback: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => ContactCreationPage()));
         },
-      ),,
+      ),
     );
   }
 }
