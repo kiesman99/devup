@@ -14,6 +14,14 @@ class _ContactCreationPageState extends State<ContactCreationPage> {
   final TextEditingController telephoneController = new TextEditingController();
   final TextEditingController emailController = new TextEditingController();
 
+
+  bool validate() {
+    if(emailController.text.isEmpty && telephoneController.text.isEmpty && githubController.text.isEmpty)
+      return false;
+
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

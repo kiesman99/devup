@@ -21,6 +21,10 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
 
   final TextEditingController personalInfoController = new TextEditingController();
 
+  bool validation() {
+    return selectedLanguages.length >= 1;
+  }
+
   @override
   void initState() {
     super.initState();
