@@ -1,5 +1,6 @@
 import 'package:devup/backend.dart';
 import 'package:devup/ui/personal_creation_page.dart';
+import 'package:devup/ui/swiping_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: PersonalCreationPage(),
+      home: SwipingPage(),
     );
   }
 }
