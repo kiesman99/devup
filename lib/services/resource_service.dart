@@ -34,6 +34,12 @@ class ResourceService
       'Mouth4': 'Mouth4.svg',
       'Mouth5': 'Mouth5.svg',
     },
+    beards: {
+      'Beard1': 'Beard1.svg',
+      'Beard2': 'Beard2.svg',
+      'Beard3': 'Beard3.svg',
+      'Beard4': 'Beard4.svg',
+    }
   );
 
   List<String> programmingLanguages = const ['Algol', 'Fortran', 'C', 'Dart','Flutter'];
