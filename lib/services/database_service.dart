@@ -1,10 +1,11 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:devup/model/user.dart';
 import 'package:firestore_helpers/firestore_helpers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:uuid/uuid.dart';
 
 ////////////////////////////////////////////////////////////////////////////////////
 /// IMPORTANT: All objects contain there documentID as property.
@@ -12,43 +13,42 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// like categories that name is used as key. Otherwise a UUID is generated
 ////////////////////////////////////////////////////////////////////////////////////
 
-
-class ObjectDoesNotExistsException implements Exception
-{
+class ObjectDoesNotExistsException implements Exception {
   final String message;
 
-  
-    ObjectDoesNotExistsException(this.message);
-  
+  ObjectDoesNotExistsException(this.message);
+
   @override
   String toString() {
-      return message;
-    }
-
+    return message;
+  }
 }
-
 
 abstract class DatabaseService {
   User currentUser;
 
-  Future<bool> updateUser(User user);
+  Future<bool> saveUser();
 
   Future<User> getCurrentUser();
 }
 
 class DatabaseServiceFireStore implements DatabaseService {
-
   final userCollection = Firestore.instance.collection("users");
-
 
   ////////////////////////////////////////////////////////////////////////////////////
   /// Users
   ///////////////////////////////////////////////////////////////////////////////////
 
   @override
-  Future<bool> updateUser(User user) async {
+  Future<bool> saveUser() async {
     try {
-      await userCollection.document(user.id).setData(user.toJson());
+      await userCollection
+          .document(currentUser.id)
+          .setData(currentUser.toJson());
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('userData', json.encode(currentUser.toJson()));
+
       return true;
     } catch (e) {
       print(e);
@@ -62,13 +62,16 @@ class DatabaseServiceFireStore implements DatabaseService {
 
   @override
   Future<User> getCurrentUser() async {
-    if (currentUser == null)
-    {
+    if (currentUser == null) {
       SharedPreferences prefs = await SharedPreferences.getInstance();
+      var userData = prefs.getString('userData');
+      if (userData == null) {
+        Uuid uuid = Uuid();
+        currentUser = User()..id = uuid.v1();
+      } else {
+        return User.fromJson(json.decode(userData));
+      }
     }
-    return null;
+    return currentUser;
   }
-
-    
-  }
-
+}
