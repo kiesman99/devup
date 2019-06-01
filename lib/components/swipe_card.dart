@@ -1,3 +1,4 @@
+import 'package:devup/backend.dart';
 import 'package:devup/model/user.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +13,14 @@ class SwipingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String experience = backend<ResourceService>().experience[user.experience];
+
     return Card(
       color: Colors.transparent,
       elevation: 4.0,
       child: Container(                      
         width: screenSize.width / 1.2,
-        height: screenSize.height / 1.6,
+        height: screenSize.height / 1.3,
         decoration: new BoxDecoration(
           color: Colors.white,
           borderRadius: new BorderRadius.circular(8.0),
@@ -39,29 +42,57 @@ class SwipingCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    "Programming Languages",
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        "Programming Languages:",
+                      ),
+                      SizedBox(width: 20.0,),
+                      Wrap(
+                        spacing: 5.0,
+                        children: List.generate(user.programmingLanguages.length, (index) {
+                          final String programmingLanguage = user.programmingLanguages[index];
+
+                          return Chip(
+                            label: Text(programmingLanguage),
+                          );
+                        }),
+                      ),
+                    ],
                   ),
                   Row(
-                    children: List.generate(user.programmingLanguages.length, (index) {
-                      final String programmingLanguage = user.programmingLanguages[index];
+                    children: <Widget>[
+                      Text(
+                        "Languages:",
+                      ),
+                      SizedBox(width: 20.0,),
+                      Wrap(
+                        spacing: 5.0,
+                        children: List.generate(user.spokenLanguages.length, (index) {
+                          final String language = user.spokenLanguages[index];
 
-                      return Chip(
-                        label: Text(programmingLanguage),
-                      );
-                    }),
+                          return Chip(
+                            label: Text(language),
+                          );
+                        }),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Languages"
+                  SizedBox(height: 10.0,),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        "Experience:",
+                      ),
+                      SizedBox(width: 20.0,),
+                      Text(experience)
+                    ],
                   ),
-                  Text(
-                    "Personal Info"
-                  ),
-                  
                 ],
               ),
             ),
             Container(
+              margin: EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
