@@ -38,13 +38,6 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
-      onPressed: () async {
-         var user=  await backend<DatabaseService>().getCurrentUser();
-         user.userName = 'test';
-         await backend<DatabaseService>().saveUser();
-
-      },),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

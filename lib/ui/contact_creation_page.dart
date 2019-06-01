@@ -1,4 +1,5 @@
 import 'package:devup/components/setup_navigation.dart';
+import 'package:devup/ui/swiping_page.dart';
 import 'package:flutter/material.dart';
 
 class ContactCreationPage extends StatefulWidget {
@@ -80,6 +81,11 @@ class _ContactCreationPageState extends State<ContactCreationPage> {
             ),
           ]
         )
+      ),
+      bottomNavigationBar: SetupNavigationBar(
+        nextPageCallback: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SwipingPage()));
+        },
       ),
     );
   }
