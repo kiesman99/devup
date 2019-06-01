@@ -454,5 +454,3 @@ DerivedData/
 .flutter-plugins
 .packages
 android/local.properties
-
-android/.gradle/*
