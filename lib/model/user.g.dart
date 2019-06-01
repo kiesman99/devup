@@ -8,13 +8,12 @@ part of 'user.dart';
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User()
+    ..id = json['id'] as String
     ..userName = json['userName'] as String
     ..hair = json['hair'] as String
     ..eyes = json['eyes'] as String
     ..nose = json['nose'] as String
     ..mouth = json['mouth'] as String
-    ..chin = json['chin'] as String
-    ..tShirt = json['tShirt'] as String
     ..spokenLanguages =
         (json['spokenLanguages'] as List)?.map((e) => e as String)?.toList()
     ..latitude = (json['latitude'] as num)?.toDouble()
@@ -25,17 +24,18 @@ User _$UserFromJson(Map<String, dynamic> json) {
         ?.toList()
     ..emailOrPhone = json['emailOrPhone'] as String
     ..occupation = json['occupation'] as String
+    ..gender = json['gender'] as String
+    ..personalInfo = json['personalInfo'] as String
     ..experience = json['experience'] as int;
 }
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+      'id': instance.id,
       'userName': instance.userName,
       'hair': instance.hair,
       'eyes': instance.eyes,
       'nose': instance.nose,
       'mouth': instance.mouth,
-      'chin': instance.chin,
-      'tShirt': instance.tShirt,
       'spokenLanguages': instance.spokenLanguages,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
@@ -43,5 +43,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'programmingLanguages': instance.programmingLanguages,
       'emailOrPhone': instance.emailOrPhone,
       'occupation': instance.occupation,
+      'gender': instance.gender,
+      'personalInfo': instance.personalInfo,
       'experience': instance.experience
     };
