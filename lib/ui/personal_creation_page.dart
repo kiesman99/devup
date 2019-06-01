@@ -1,33 +1,30 @@
 import 'package:devup/backend.dart';
+import 'package:devup/components/choice_chips.dart';
 import 'package:devup/components/selection_chip.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
 
-class ProgrammingCreationPage extends StatefulWidget {
+class PersonalCreationPage extends StatefulWidget {
   @override
-  _ProgrammingCreationPageState createState() => _ProgrammingCreationPageState();
+  _PersonalCreationPageState createState() => _PersonalCreationPageState();
 }
 
-class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
-  final List<String> programmingLanguages = backend<ResourceService>().programmingLanguages;
-  final List<String> selectedLanguages = [];
-
-  final TextEditingController occupationController = new TextEditingController();
-
-  double sliderValue = 0.0;
-  final List<String> sliderValues = ["Beginner", "Intermediate", "Advanced"];
-
+class _PersonalCreationPageState extends State<PersonalCreationPage> {
   final TextStyle headingStyle = TextStyle(
     fontSize: 20.0
   );
 
+  final List<String> languages = backend<ResourceService>().languages;
+  final List<String> selectedLanguages = [];
+  final List<String> genders = backend<ResourceService>().genders;
+  String selectedGender;
+
+  final TextEditingController personalInfoController = new TextEditingController();
+
   @override
   void initState() {
     super.initState();
-  }
-
-  bool validate() {
-    return selectedLanguages.length >= 1;
+    selectedGender = genders[2];
   }
 
   @override
@@ -40,7 +37,7 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
             Container(
               margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text(
-                "Programming Languages",
+                "Languages",
                 style: headingStyle,
                 textAlign: TextAlign.start,
               ),
@@ -49,8 +46,8 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
               margin: EdgeInsets.all(10),
               child: Wrap(
                 spacing: 5,
-                children: List.generate(programmingLanguages.length, (index) {
-                  final String language = programmingLanguages[index];
+                children: List.generate(languages.length, (index) {
+                  final String language = languages[index];
                   return SelectionChip(
                     text: language,
                     onPressed: (selected) {
@@ -65,9 +62,28 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
             ),
             SizedBox(),
             Container(
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: Text(
+                "Gender",
+                style: headingStyle,
+                textAlign: TextAlign.start,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: ChoiceChips(
+                choices: genders,
+                selected: 2,
+                onPressed: (selection) {
+                  selectedGender = selection;
+                },
+              ),
+            ),
+            SizedBox(),
+            Container(
               margin: EdgeInsets.all(10),
               child: Text(
-                "Occupation",
+                "Personal Information",
                 style: headingStyle,
                 textAlign: TextAlign.start,
               )
@@ -75,35 +91,15 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
             Container(
               margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
-                controller: occupationController,
+                maxLength: 50,
+                controller: personalInfoController,
                 decoration: InputDecoration(
-                  hintText: "Company/University",
+                  hintText: "Write something about yourself",
                   icon: Icon(
-                    Icons.domain
+                    Icons.account_circle
                   )
                 ),
               ),
-            ),
-            SizedBox(height: 50.0,),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: Text(
-                "Experience (" + sliderValues[sliderValue.toInt()] + ")" ,
-                style: headingStyle,
-                textAlign: TextAlign.start,
-              )
-            ),
-            Slider(
-              value: sliderValue,
-              min: 0.0,
-              max: 2.0,
-              divisions: 2,
-              label: sliderValues[sliderValue.toInt()],
-              onChanged: (value) {
-                setState(() {
-                  this.sliderValue = value;
-                });
-              },
             ),
           ],
         ),

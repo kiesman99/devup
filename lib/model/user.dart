@@ -25,6 +25,10 @@ class User
 
   String occupation;
 
+  String gender;
+
+  String personalInfo;
+
   int experience;
 
   User();
