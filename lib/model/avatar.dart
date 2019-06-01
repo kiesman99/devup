@@ -4,7 +4,8 @@ class AvatarParts
   final Map<String,String> eyes;
   final Map<String,String> noses;
   final Map<String,String> mouths;
+  final Map<String,String> beards;
 
-  const AvatarParts({this.hairs, this.eyes, this.noses, this.mouths});
+  const AvatarParts({this.hairs, this.eyes, this.noses, this.mouths, this.beards});
 }
 
