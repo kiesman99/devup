@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "745754195457",
+    "firebase_url": "https://hack19-54d5d.firebaseio.com",
+    "project_id": "hack19-54d5d",
+    "storage_bucket": "hack19-54d5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745754195457:android:2335f3796343dc52",
+        "android_client_info": {
+          "package_name": "de.nllj.devup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745754195457-2i5v8qoqduafu0boiksiap6thuol9umt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC11wnNqpQbByi5o2ktZp01fMTsVx0Lp6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745754195457-2i5v8qoqduafu0boiksiap6thuol9umt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

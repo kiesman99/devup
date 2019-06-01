@@ -30,6 +30,8 @@ abstract class DatabaseService {
   Future<bool> saveUser();
 
   Future<User> getCurrentUser();
+
+   Stream<List<User>> matchUsers();
 }
 
 class DatabaseServiceFireStore implements DatabaseService {
@@ -42,6 +44,11 @@ class DatabaseServiceFireStore implements DatabaseService {
   @override
   Future<bool> saveUser() async {
     try {
+      if (currentUser.id == null)
+      {
+        Uuid uuid = Uuid();
+        currentUser.id = uuid.v1();
+      }
       await userCollection
           .document(currentUser.id)
           .setData(currentUser.toJson());
@@ -66,12 +73,16 @@ class DatabaseServiceFireStore implements DatabaseService {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var userData = prefs.getString('userData');
       if (userData == null) {
-        Uuid uuid = Uuid();
-        currentUser = User()..id = uuid.v1();
+        currentUser = User();
       } else {
         return User.fromJson(json.decode(userData));
       }
     }
     return currentUser;
+  }
+
+  @override
+  Stream<List<User>> matchUsers() {
+    return userCollection.snapshots().map<List<User>>((doc) => doc.documents.map<User>((doc) => User.fromJson(doc.data)).toList());
   }
 }
