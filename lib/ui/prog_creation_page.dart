@@ -1,4 +1,5 @@
 import 'package:devup/components/selection_chip.dart';
+import 'package:devup/components/setup_navigation.dart';
 import 'package:flutter/material.dart';
 
 class ProgrammingCreationPage extends StatefulWidget {
@@ -30,8 +31,8 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
+    return Scaffold(
+      body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -102,10 +103,18 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
                   this.sliderValue = value;
                 });
               },
-            ),
+            )
           ],
         ),
-      )
+      ),
+      bottomNavigationBar: SetupNavigationBar(
+        context: context,
+        nextPageCallback: () {
+          // TODO: Add navigate to next page
+        },
+      ),
     );
   }
 }
+
+
