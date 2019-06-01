@@ -9,8 +9,6 @@ class User {
   String eyes;
   String nose;
   String mouth;
-  String chin;
-  String tShirt;
 
   List<String> spokenLanguages;
 

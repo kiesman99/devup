@@ -4,28 +4,35 @@ class ResourceService
 {
     AvatarParts avatarParts = const AvatarParts(
     hairs: {
-      'brown': 'brown_hair.svg',
-      'black': 'black_hair.svg',
+      'Hair1': 'Hair1.svg',
+      'Hair2': 'Hair2.svg',
+      'Hair3': 'Hair3.svg',
+      'Hair4': 'Hair4.svg',
     },
     eyes: {
-      'brown': 'brown_eye.svg',
-      'black': 'black_blue_eye.svg',
+      'Eyes1': 'Eyes1.svg',
+      'Eyes2': 'Eyes2.svg',
+      'Eyes3': 'Eyes3.svg',
+      'Eyes4': 'Eyes4.svg',
+      'Eyes5': 'Eyes5.svg',
+      'Eyes6': 'Eyes6.svg',
+      'Eyes7': 'Eyes7.svg',
+      'Eyes8': 'Eyes8.svg',
+      'Eyes9': 'Eyes9.svg',
+      'Eyes10': 'Eyes10.svg',
     },
     noses: {
-      'nose1': 'nose1.svg',
-      'nose2': 'nose2.svg',
+      'Nose1': 'Nose1.svg',
+      'Nose2': 'Nose2.svg',
+      'Nose3': 'Nose3.svg',
+      'Nose4': 'Nose4.svg',
     },
     mouths: {
-      'mouth1': 'mouth1.svg',
-      'mouth2': 'mouth2.svg',
-    },
-    chins: {
-      'chin1': 'chin1.svg',
-      'chin2': 'chin2.svg',
-    },
-    tShirts: {
-      'red': 't_shirt_red.svg',
-      'blue': 't_shirt_blue.svg',
+      'Mouth1': 'Mouth1.svg',
+      'Mouth2': 'Mouth2.svg',
+      'Mouth3': 'Mouth3.svg',
+      'Mouth4': 'Mouth4.svg',
+      'Mouth5': 'Mouth5.svg',
     },
   );
 
