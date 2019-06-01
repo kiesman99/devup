@@ -56,14 +56,15 @@ flutter:
   #  - images/a_dot_ham.jpeg
 
   assets: 
-        - assets/SVG/Eyes/
-        - assets/SVG/Hair/
-        - assets/SVG/Mouth/
-        - assets/SVG/Nose/
-        - assets/SVG/Head.svg
-        - assets/SVG/Body.svg
-        - assets/SVG/Glasses.svg
-        - assets/SVG/Beard/
+    - assets/SVG/Eyes/
+    - assets/SVG/Hair/
+    - assets/SVG/Mouth/
+    - assets/SVG/Nose/
+    - assets/SVG/Head.svg
+    - assets/SVG/Body.svg
+    - assets/SVG/Glasses.svg
+    - assets/SVG/Beard/
+    - assets/300.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

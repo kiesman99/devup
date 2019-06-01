@@ -1,3 +1,4 @@
+import 'package:devup/components/setup_navigation.dart';
 import 'package:flutter/material.dart';
 
 class ContactCreationPage extends StatefulWidget {
@@ -79,7 +80,7 @@ class _ContactCreationPageState extends State<ContactCreationPage> {
             ),
           ]
         )
-      )
+      ),
     );
   }
 }

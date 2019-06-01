@@ -2,6 +2,7 @@ import 'package:devup/backend.dart';
 import 'package:devup/components/selection_chip.dart';
 import 'package:devup/components/setup_navigation.dart';
 import 'package:devup/services/resource_service.dart';
+import 'package:devup/ui/personal_creation_page.dart';
 import 'package:flutter/material.dart';
 
 class ProgrammingCreationPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
   final TextEditingController occupationController = new TextEditingController();
 
   double sliderValue = 0.0;
-  final List<String> sliderValues = ["Beginner", "Intermediate", "Advanced"];
+  final List<String> sliderValues = backend<ResourceService>().experience;
 
   final TextStyle headingStyle = TextStyle(
     fontSize: 20.0
@@ -112,7 +113,8 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
       bottomNavigationBar: SetupNavigationBar(
         context: context,
         nextPageCallback: () {
-          // TODO: Add navigate to next page
+
+          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalCreationPage()));
         },
       ),
     );
