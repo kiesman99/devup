@@ -1,4 +1,4 @@
-import 'package:devup/init_backend.dart';
+import 'package:devup/backend.dart';
 import 'package:devup/ui/avatar_creation_page.dart';
 import 'package:flutter/material.dart';
 
