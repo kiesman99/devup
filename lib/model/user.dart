@@ -1,22 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'user.g.dart';
-
 @JsonSerializable()
-class User
-{
+class User {
   String id;
   String userName;
   String hair;
   String eyes;
   String nose;
   String mouth;
+  String chin;
 
   List<String> spokenLanguages;
 
-  double latitude;
-  double longitude;
-
+  GeoPoint location;
   int age;
 
   List<String> programmingLanguages;
@@ -32,8 +29,41 @@ class User
 
   User();
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-  Map<String, dynamic> toJson() => _$UserToJson(this);
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User()
+      ..userName = json['userName'] as String
+      ..hair = json['hair'] as String
+      ..eyes = json['eyes'] as String
+      ..nose = json['nose'] as String
+      ..mouth = json['mouth'] as String
+      ..chin = json['chin'] as String
+      ..spokenLanguages =
+          (json['spokenLanguages'] as List)?.map((e) => e as String)?.toList()
+      ..location = json['location']
+      ..age = json['age'] as int
+      ..programmingLanguages = (json['programmingLanguages'] as List)
+          ?.map((e) => e as String)
+          ?.toList()
+      ..emailOrPhone = json['emailOrPhone'] as String
+      ..occupation = json['occupation'] as String
+      ..experience = json['experience'] as int;
+  }
 
-
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'userName': userName,
+      'hair': hair,
+      'eyes': eyes,
+      'nose': nose,
+      'mouth': mouth,
+      'chin': chin,
+      'spokenLanguages': spokenLanguages,
+      'location': location,
+      'age': age,
+      'programmingLanguages': programmingLanguages,
+      'emailOrPhone': emailOrPhone,
+      'occupation': occupation,
+      'experience': experience
+    };
+  }
 }

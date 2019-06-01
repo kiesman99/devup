@@ -25,6 +25,7 @@ dependencies:
   json_serializable: any
   json_annotation: any
   shared_preferences: any
+  uuid: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -52,8 +53,7 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
-  assets:
-    - assets/300.png
+  assets: 
     - assets/SVG/Eyes/
     - assets/SVG/Hair/
     - assets/SVG/Mouth/
@@ -61,6 +61,8 @@ flutter:
     - assets/SVG/Head.svg
     - assets/SVG/Body.svg
     - assets/SVG/Glasses.svg
+    - assets/SVG/Beard/
+    - assets/300.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
