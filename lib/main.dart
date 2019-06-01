@@ -1,11 +1,16 @@
+import 'package:devup/init_backend.dart';
 import 'package:devup/ui/avatar_creation_page.dart';
 import 'package:devup/ui/prog_creation_page.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  initBackend();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

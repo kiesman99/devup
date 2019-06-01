@@ -9,14 +9,26 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
   PageController samplecontroller;
 
+  static List<String> _stackElements = [
+    "SKIN",
+    "HAIR",
+    "EYES",
+    "NOSE",
+    "MOUTH",
+    "BEARD",
+    "CLOTHES"
+  ];
+
   @override
   void initState() {
 
-    samplecontroller = new PageController(viewportFraction: 0.8);
+    samplecontroller = new PageController();
 
     // TODO: implement initState
     super.initState();
   }
+
+
 
 
   @override
@@ -27,21 +39,100 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
         child: Container(
           child: Stack(
             children: <Widget>[
+              // skin
               _ColorRect.symmetric(
                 color: Colors.red,
                 size: 500.0,
               ),
-              SizedBox(
-                height: 50.0,
-                child: PageView.builder(
-                  controller: samplecontroller,
-                  itemBuilder: (context, index){
-                    return _ColorRect.symmetric(
-                      color: index % 2 == 0 ? Colors.yellow : Colors.green,
-                      size: 50.0,
-                    );
-                  },
-                ),
+              //hair
+              PageView.builder(
+                controller: samplecontroller,
+                itemBuilder: (context, index){
+                  return _ColorRect.symmetric(
+                    color: index % 2 == 0 ? Colors.yellow : Colors.green,
+                    size: 50.0,
+                  );
+                },
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  SVGHolder(
+                    marginTop: 50.0,
+                    child: SizedBox(
+                      height: 100.0,
+                      child: PageView.builder(
+                        controller: samplecontroller,
+                        itemBuilder: (context, index){
+                          return _ColorRect.symmetric(
+                            color: index % 2 == 0 ? Colors.pink : Colors.amber,
+                            size: 50.0,
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  SVGHolder(
+                    marginTop: 50.0,
+                    child: SizedBox(
+                      height: 100.0,
+                      child: PageView.builder(
+                        controller: samplecontroller,
+                        itemBuilder: (context, index){
+                          return _ColorRect.symmetric(
+                            color: index % 2 == 0 ? Colors.pink : Colors.amber,
+                            size: 50.0,
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  SVGHolder(
+                    marginTop: 50.0,
+                    child: SizedBox(
+                      height: 100.0,
+                      child: PageView.builder(
+                        controller: samplecontroller,
+                        itemBuilder: (context, index){
+                          return _ColorRect.symmetric(
+                            color: index % 2 == 0 ? Colors.pink : Colors.amber,
+                            size: 50.0,
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  SVGHolder(
+                    marginTop: 50.0,
+                    child: SizedBox(
+                      height: 100.0,
+                      child: PageView.builder(
+                        controller: samplecontroller,
+                        itemBuilder: (context, index){
+                          return _ColorRect.symmetric(
+                            color: index % 2 == 0 ? Colors.pink : Colors.amber,
+                            size: 50.0,
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  SVGHolder(
+                    marginTop: 50.0,
+                    child: SizedBox(
+                      height: 100.0,
+                      child: PageView.builder(
+                        controller: samplecontroller,
+                        itemBuilder: (context, index){
+                          return _ColorRect.symmetric(
+                            color: index % 2 == 0 ? Colors.pink : Colors.amber,
+                            size: 50.0,
+                          );
+                        },
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           ),
@@ -52,14 +143,31 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 }
 
 class SVGHolder extends StatelessWidget {
+
+  Widget child;
+
+  double marginTop;
+  double marginBottom;
+
+  SVGHolder({this.marginTop = 0, this.marginBottom = 0, this.child});
+
+  SVGHolder.symmetrical({double margin}) : this(marginTop: margin, marginBottom: margin);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      margin: EdgeInsets.only(
+        top: marginTop,
+        bottom: marginBottom
+      ),
+      child: child,
+    );
   }
 }
 
 
 /// Just a simple placeholder
+/// SVG PLACEHOLDER
 class _ColorRect extends StatelessWidget {
 
   Color color;
