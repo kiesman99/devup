@@ -61,6 +61,7 @@ flutter:
         - assets/SVG/Head.svg
         - assets/SVG/Body.svg
         - assets/SVG/Glasses.svg
+        - assets/SVG/Beard/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
