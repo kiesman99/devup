@@ -19,6 +19,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    assets: 
+      - assets/SVG/Eyes/
+      - assets/SVG/Hair/
+      - assets/SVG/Mouth/
+      - assets/SVG/Nose/
+      - assets/SVG/Head.svg
+      - assets/SVG/Body.svg
+      - assets/SVG/Glasses.svg
   cloud_firestore: any
   firestore_helpers: any
   get_it: any
