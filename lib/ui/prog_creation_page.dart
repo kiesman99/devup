@@ -1,5 +1,6 @@
+import 'package:devup/backend.dart';
 import 'package:devup/components/selection_chip.dart';
-import 'package:devup/components/setup_navigation.dart';
+import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
 
 class ProgrammingCreationPage extends StatefulWidget {
@@ -8,7 +9,7 @@ class ProgrammingCreationPage extends StatefulWidget {
 }
 
 class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
-  final List<String> programmingLanguages = ["CSS", "PHP", "JS", "Java", "Python", "Dart", "C++", "C", "C#", "F#", "R", "Ruby"];
+  final List<String> programmingLanguages = backend<ResourceService>().programmingLanguages;
   final List<String> selectedLanguages = [];
 
   final TextEditingController occupationController = new TextEditingController();

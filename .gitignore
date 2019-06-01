@@ -450,3 +450,7 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/linux,xcode,macos,android,windows
+
+.flutter-plugins
+.packages
+android/local.properties

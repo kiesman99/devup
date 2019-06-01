@@ -21,11 +21,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
   @override
   void initState() {
-
-    samplecontroller = new PageController();
-
-    // TODO: implement initState
     super.initState();
+    samplecontroller = new PageController();
   }
 
 
@@ -33,9 +30,9 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Scaffold(
       // keep space for system used space
-      child: SafeArea(
+      body: SafeArea(
         child: Container(
           child: Stack(
             children: <Widget>[
@@ -144,10 +141,10 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
 class SVGHolder extends StatelessWidget {
 
-  Widget child;
+  final Widget child;
 
-  double marginTop;
-  double marginBottom;
+  final double marginTop;
+  final double marginBottom;
 
   SVGHolder({this.marginTop = 0, this.marginBottom = 0, this.child});
 
@@ -170,9 +167,9 @@ class SVGHolder extends StatelessWidget {
 /// SVG PLACEHOLDER
 class _ColorRect extends StatelessWidget {
 
-  Color color;
-  double height;
-  double width;
+  final Color color;
+  final double height;
+  final double width;
 
   _ColorRect({this.color, this.height, this.width});
 
