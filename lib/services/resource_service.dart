@@ -30,4 +30,8 @@ class ResourceService
   );
 
   List<String> programmingLanguages = const ['Algol', 'Fortran', 'C', 'Dart','Flutter'];
+
+  List<String> languages = const ['English', 'German', 'Dutch', 'Spanish','French'];
+
+  List<String> genders = const ['Male', 'Female', 'Rather not say'];
 }
