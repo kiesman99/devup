@@ -1,3 +1,4 @@
+import 'package:devup/components/svg_holder.dart';
 import 'package:flutter/material.dart';
 
 class AvatarCreatorPage extends StatefulWidget {

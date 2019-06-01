@@ -1,4 +1,5 @@
 import 'package:devup/backend.dart';
+import 'package:devup/ui/avatar_creation_page.dart';
 import 'package:devup/ui/personal_creation_page.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: PersonalCreationPage(),
+      home: AvatarCreatorPage(),
     );
   }
 }
