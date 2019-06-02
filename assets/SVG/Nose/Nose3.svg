@@ -1,3 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="66.435" height="99.53" viewBox="0 0 66.435 99.53">
-  <path id="Nase3" d="M0,0H0S-16.555,30.431-13.871,54.375c1.1,9.779,5.725,23.668,10.83,30.762,7.02,9.756,15.226,10.7,17.261,10.7a30.426,30.426,0,0,0,9.6-1.662c2.4-.873,4.229-2.521,7.2-5.007C36.936,84.2,42.361,74.3,44.309,65.331c2.21-10.173,3.9-22.05,2.393-33.029A118.057,118.057,0,0,0,37,0" transform="translate(16.673 1.195)" fill="none" stroke="#000" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Nose3" transform="translate(-534 -5)">
+    <path id="Nase3" d="M0,0H0S-16.555,30.431-13.871,54.375c1.1,9.779,5.725,23.668,10.83,30.762,7.02,9.756,15.226,10.7,17.261,10.7a30.426,30.426,0,0,0,9.6-1.662c2.4-.873,4.229-2.521,7.2-5.007C36.936,84.2,42.361,74.3,44.309,65.331c2.21-10.173,3.9-22.05,2.393-33.029A118.057,118.057,0,0,0,37,0" transform="translate(1038.5 435.5)" fill="none" stroke="#000" stroke-width="5"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
+  </g>
 </svg>

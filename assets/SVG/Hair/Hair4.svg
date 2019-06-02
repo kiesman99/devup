@@ -1,11 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="748" height="801" viewBox="0 0 748 801">
-  <g id="Hair4" transform="translate(-699 -31)">
-    <rect id="Rectangle_17" data-name="Rectangle 17" width="748" height="801" transform="translate(699 31)" fill="none" opacity="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Hair4" transform="translate(-534 -5)">
     <g id="Haar4" transform="translate(554 725)">
       <path id="Path_11" data-name="Path 11" d="M516-455.764l-48.144-11.362-51.349,30.815-52.2,40.405-35.187,53.51-35.878,91.842-58.252,59.021-34.145,34.408v-74.531l13.436-78.659,20.709-73.421,35.39-61.36,44.526-45.077,49.4-30.9,76.274-26.015,53-10.165H516Z"/>
       <path id="Path_12" data-name="Path 12" d="M200.849-455.764l48.144-11.362,51.349,30.815,52.2,40.405,35.187,53.51L423.6-250.553l58.252,59.021L516-157.124v-74.531l-13.436-78.659-20.709-73.421-35.389-61.36-44.525-45.077-49.4-30.9L276.264-547.09l-53-10.165H200.849Z" transform="translate(315.151)"/>
       <path id="Path_13" data-name="Path 13" d="M223-208.5V42.713L253.981,2.8l21.641,63.671,40.458-50.253h30.595L333.5,6.09,316.079-9.891,298.064-27.1l-16.1-19.941L270.319-63.963l-14.466-26.1-8.417-17.312L241.39-121.9l-5.435-15.225-3.831-14.016-2.849-13.286L226.79-177.8l-1.211-11.985Z"/>
       <path id="Path_14" data-name="Path 14" d="M346.67-208.5V42.713L315.69,2.8,294.05,66.468,253.594,16.215H223L236.175,6.09,253.594-9.891,271.608-27.1,287.7-47.04l11.648-16.923,14.465-26.1,8.417-17.312,6.045-14.529,5.435-15.225,3.83-14.016,2.849-13.286,2.485-13.372,1.21-11.985Z" transform="translate(462.674)"/>
+    </g>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
     </g>
   </g>
 </svg>

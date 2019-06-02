@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="52.07" height="129.969" viewBox="0 0 52.07 129.969"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Nose1" transform="translate(-534 -5)">
+    <path id="Nase1" d="M513.339-319.5c-27.117,67.734-40.874,91.055-45.344,103.99a24.02,24.02,0,0,0,0,15.279s2.57,7.2,10.363,7.271c10.994.094,29.685-6.971,37.861-7.271" transform="translate(554 725)" fill="none" stroke="#000" stroke-width="5"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

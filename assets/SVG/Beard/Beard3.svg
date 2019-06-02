@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="748" height="801" viewBox="0 0 748 801">
-  <g id="Beard3" transform="translate(-699 -31)">
-    <rect id="Rectangle_22" data-name="Rectangle 22" width="748" height="801" transform="translate(699 31)" fill="none" opacity="0"/>
-    <g id="Bart3">
-      <rect id="Rectangle_21" data-name="Rectangle 21" width="748" height="801" transform="translate(699 31)" fill="none" opacity="0"/>
-      <path id="Path_6" data-name="Path 6" d="M1038.971,766.382l1.434-13.7,3.67,2.109h6.271l3.12,1.787v-3.9h3.578l1.252,2.109,4.656-2.109,5.791,2.109h11.549l9.1-2.109,1.927-4.426,4.667,4.426,5.224-2.81,3.75,2.81,11.649-2.81,1.726,15.1-11.283,3.348-4.593,6.31-4.169-6.31-4.252,4.116-8.645-4.116-5.1,4.116-8.367-4.116-4.094,4.116-3.2-4.116-7.591,4.116-1.281-4.116-7.968,4.116-2.653-4.116-6.171,5.239Z"/>
-      <path id="Path_7" data-name="Path 7" d="M1056.3,687.368l-.2-6.979,3.6-2.537,2.525,2.537,5.3-2.537,3.663,2.537,11.414-2.537,4.051,2.537,1.907,2.295v5.707l-4.134,3.054-5.211-3.054-4.31,1.594-1.767,4.131-4.156-2.671-8.333,1.405Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Beard3" transform="translate(-534 -5)">
+    <path id="Bart4" d="M986.27,564.524l2.564-12.367,11.081,3.549h15.519l12.443,2.459,9.537-2.459,7.289,4.153,14.352-1.694,6.806,4.56,9.669-2.867,7.755,2.867,15.69-7.02H1109.3l8.264-5.412,12.375,9.565v9.686l-12.375,8.5-5.981-4.78-7.066,7.483-11.465-4.578-9.766,1.876-11.888,2.7-11-4.578-8.162,6.2-14.824-1.624-6.727,3.792-2.81-8.37-9.342,4.578-14-7.483H994.275Z"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
     </g>
   </g>
 </svg>

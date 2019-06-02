@@ -1,7 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="288.877" height="274.083" viewBox="0 0 288.877 274.083">
-  <g id="Mouth2" transform="translate(-907.432 -438.284)">
-    <path id="Mouth1" d="M410.663-139.59S344.2,89.924,610.506,29.419" transform="matrix(0.777, -0.629, 0.629, 0.777, 689.434, 931.859)" fill="none" stroke="#000" stroke-width="5"/>
-    <path id="Path_2" data-name="Path 2" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(531 749)" fill="none" stroke="#000" stroke-width="2"/>
-    <path id="Path_3" data-name="Path 3" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(802.138 371.147) rotate(53)" fill="none" stroke="#000" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Mouth2" transform="translate(-510 -20)">
+    <g id="Mouth2-2" data-name="Mouth2">
+      <path id="Mouth1" d="M410.663-139.59S344.2,89.924,610.506,29.419" transform="matrix(0.777, -0.629, 0.629, 0.777, 689.434, 931.859)" fill="none" stroke="#000" stroke-width="5"/>
+      <path id="Path_2" data-name="Path 2" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(531 749)" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Path_3" data-name="Path 3" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(802.138 371.147) rotate(53)" fill="none" stroke="#000" stroke-width="2"/>
+    </g>
+    <g id="Holder" transform="translate(510 20)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
   </g>
 </svg>

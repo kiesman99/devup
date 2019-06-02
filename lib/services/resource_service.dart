@@ -40,8 +40,7 @@ class ResourceService
       'Beard2': 'Beard2.svg',
       'Beard3': 'Beard3.svg',
       'Beard4': 'Beard4.svg',
-      'Beard5': 'Beard5.svg',
-      'Beard5': 'Beard6.svg',
+      'Beard5': 'Beard5.svg'
     },
       bodies: {
         'Body1': 'Body1.svg',

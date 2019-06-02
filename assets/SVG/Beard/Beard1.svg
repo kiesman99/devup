@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="748" height="801" viewBox="0 0 748 801">
-  <g id="Beard1" transform="translate(-699 -31)">
-    <rect id="Rectangle_19" data-name="Rectangle 19" width="748" height="801" transform="translate(699 31)" fill="none" opacity="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Beard1" transform="translate(-534 -5)">
     <path id="Bart1" d="M1038.971,766.382l1.434-13.7,3.67,2.109h6.271l3.12,1.787v-3.9h3.578l1.252,2.109,4.656-2.109,5.791,2.109h11.549l9.1-2.109,1.927-4.426,4.667,4.426,5.224-2.81,3.75,2.81,11.649-2.81,1.726,15.1-11.283,3.348-4.593,6.31-4.169-6.31-4.252,4.116-8.645-4.116-5.1,4.116-8.367-4.116-4.094,4.116-3.2-4.116-7.591,4.116-1.281-4.116-7.968,4.116-2.653-4.116-6.171,5.239Z"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
   </g>
 </svg>

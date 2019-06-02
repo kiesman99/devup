@@ -1,3 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="63" viewBox="0 0 120 63">
-  <text id="Mouth5" transform="translate(24) rotate(90)" font-size="103" font-family="Menlo-Regular, Menlo"><tspan x="0" y="0">3</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Mouth5" transform="translate(-510 -20)">
+    <text id="Mouth5-2" data-name="Mouth5" transform="translate(1012 596) rotate(90)" font-size="103" font-family="Menlo-Regular, Menlo"><tspan x="0" y="0">3</tspan></text>
+    <g id="Holder" transform="translate(510 20)" opacity="0.002" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
+  </g>
 </svg>

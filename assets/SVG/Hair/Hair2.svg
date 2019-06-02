@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="748" height="801" viewBox="0 0 748 801">
-  <g id="Hair2" transform="translate(-699 -31)">
-    <rect id="Rectangle_16" data-name="Rectangle 16" width="748" height="801" transform="translate(699 31)" fill="none" opacity="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Hair2" transform="translate(-534 -5)">
     <path id="Haar3" d="M1045.037,241.053l8.051,13.075h10.106l9.864-13.075,4.97-59.962V72l-4.97-21.428-9.864,10.052L1053.087,46.62l-8.051,14.007-8.365-10.052,4.312,30.515,4.054,36.6v37.2l-4.054,44.554Z"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
   </g>
 </svg>

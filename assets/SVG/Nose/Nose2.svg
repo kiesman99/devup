@@ -1,3 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="89.915" height="51.004" viewBox="0 0 89.915 51.004">
-  <path id="Nase2" d="M0,0S2.787-16.45,11.565-29.64c7.078-10.637,19.3-18.367,29.009-18.367,9.286,0,22.932,7.846,31.011,18.367C81.646-16.538,85,0,85,0" transform="translate(87.45 0.497) rotate(180)" fill="none" stroke="#000" stroke-width="5"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Nose2" transform="translate(-534 -5)">
+    <path id="Nase2" d="M0,0S2.787-16.45,11.565-29.64c7.078-10.637,19.3-18.367,29.009-18.367,9.286,0,22.932,7.846,31.011,18.367C81.646-16.538,85,0,85,0" transform="translate(1098.5 468.493) rotate(180)" fill="none" stroke="#000" stroke-width="5"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
+  </g>
 </svg>

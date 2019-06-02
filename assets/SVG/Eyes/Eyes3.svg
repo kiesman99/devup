@@ -1,12 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="283.816" height="54" viewBox="0 0 283.816 54">
-  <g id="Eyes3" transform="translate(-373 377)">
-    <g id="Eye">
-      <circle id="Ellipse_8" data-name="Ellipse 8" cx="27" cy="27" r="27" transform="translate(373 -377)" fill="#fff"/>
-      <circle id="Ellipse_9" data-name="Ellipse 9" cx="8.5" cy="8.5" r="8.5" transform="translate(400 -367)"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Eyes3" transform="translate(-534 -5)">
+    <g id="Eyes3-2" data-name="Eyes3" transform="translate(554 725)">
+      <g id="Eye">
+        <circle id="Ellipse_8" data-name="Ellipse 8" cx="27" cy="27" r="27" transform="translate(373 -377)" fill="#fff"/>
+        <circle id="Ellipse_9" data-name="Ellipse 9" cx="8.5" cy="8.5" r="8.5" transform="translate(400 -367)"/>
+      </g>
+      <g id="Eye-2" data-name="Eye" transform="translate(229.816)">
+        <circle id="Ellipse_8-2" data-name="Ellipse 8" cx="27" cy="27" r="27" transform="translate(373 -377)" fill="#fff"/>
+        <circle id="Ellipse_9-2" data-name="Ellipse 9" cx="8.5" cy="8.5" r="8.5" transform="translate(400 -367)"/>
+      </g>
     </g>
-    <g id="Eye-2" data-name="Eye" transform="translate(229.816)">
-      <circle id="Ellipse_8-2" data-name="Ellipse 8" cx="27" cy="27" r="27" transform="translate(373 -377)" fill="#fff"/>
-      <circle id="Ellipse_9-2" data-name="Ellipse 9" cx="8.5" cy="8.5" r="8.5" transform="translate(400 -367)"/>
+    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
     </g>
   </g>
 </svg>

@@ -1,11 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="917.699" height="439" viewBox="0 0 917.699 439">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
   <defs>
     <clipPath id="clip-path">
       <rect width="13" height="317" fill="none"/>
     </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="1072" height="1129" fill="none"/>
+    </clipPath>
   </defs>
-  <g id="Kleidung2" transform="translate(-610.313 -654)">
-    <path id="Kleidung2-2" data-name="Kleidung2" d="M964.012,591H46.313a651.247,651.247,0,0,1,6.357-68.472A632.692,632.692,0,0,1,65.9,456.853a598.905,598.905,0,0,1,45.313-120.785A544.285,544.285,0,0,1,178.733,233a480.375,480.375,0,0,1,86.208-81H740.835a488.073,488.073,0,0,1,86.873,80.764,551.389,551.389,0,0,1,68.586,102.892A604.388,604.388,0,0,1,942.945,456.47a637.2,637.2,0,0,1,13.96,65.814A655.566,655.566,0,0,1,964.012,591Z" transform="translate(564 502)" fill="red"/>
+  <g id="Body2" transform="translate(-534 -6)">
+    <path id="Kleidung2" d="M964.012,591H46.313a651.247,651.247,0,0,1,6.357-68.472A632.692,632.692,0,0,1,65.9,456.853a598.905,598.905,0,0,1,45.313-120.785A544.285,544.285,0,0,1,178.733,233a480.375,480.375,0,0,1,86.208-81H740.835a488.073,488.073,0,0,1,86.873,80.764,551.389,551.389,0,0,1,68.586,102.892A604.388,604.388,0,0,1,942.945,456.47a637.2,637.2,0,0,1,13.96,65.814A655.566,655.566,0,0,1,964.012,591Z" transform="translate(564 502)" fill="red"/>
     <g id="Repeat_Grid_1" data-name="Repeat Grid 1" transform="translate(1085 776)" clip-path="url(#clip-path)">
       <g transform="translate(-531 -50)">
         <circle id="Ellipse_2" data-name="Ellipse 2" cx="6.5" cy="6.5" r="6.5" transform="translate(531 50)"/>
@@ -39,5 +42,11 @@
       </g>
     </g>
     <path id="Path_1" data-name="Path 1" d="M0,0H5V322H0Z" transform="translate(1104 771)"/>
+    <g id="Holder" transform="translate(534 6)" opacity="0" clip-path="url(#clip-path-2)">
+      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
+        <rect width="1072" height="1129" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
+      </g>
+    </g>
   </g>
 </svg>
