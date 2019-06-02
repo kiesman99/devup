@@ -1,1 +1,12 @@
-<?xml version="1.0" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="248.352 324.327 61.098 19.74" width="61.098px" height="19.74px"><ellipse vector-effect="non-scaling-stroke" cx="303.5440452755906" cy="334.19716678019955" rx="5.906249999999943" ry="9.869791666666629" id="Ellipse" fill="rgb(235,235,235)"/><ellipse vector-effect="non-scaling-stroke" cx="254.25811612027724" cy="334.19716678019955" rx="5.906249999999957" ry="9.869791666666629" id="Ellipse" fill="rgb(235,235,235)"/><ellipse vector-effect="non-scaling-stroke" cx="256.1331242946642" cy="336.95610410989985" rx="1.875008174386906" ry="2.008937329700302" id="Ellipse" fill="rgb(0,0,0)"/><ellipse vector-effect="non-scaling-stroke" cx="305.4190534499774" cy="336.95610410989985" rx="1.8750081743868918" ry="2.008937329700302" id="Ellipse" fill="rgb(0,0,0)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="283.784" height="35" viewBox="0 0 283.784 35">
+  <g id="Eyes5" transform="translate(-373 286)">
+    <g id="Eye" transform="translate(4)">
+      <ellipse id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="17.5" rx="30" ry="17.5" transform="translate(369 -286)" fill="#fff"/>
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="8.5" cy="8.5" r="8.5" transform="translate(402 -281)"/>
+    </g>
+    <g id="Eye-2" data-name="Eye" transform="translate(227.784)">
+      <ellipse id="Ellipse_10-2" data-name="Ellipse 10" cx="30" cy="17.5" rx="30" ry="17.5" transform="translate(369 -286)" fill="#fff"/>
+      <circle id="Ellipse_11-2" data-name="Ellipse 11" cx="8.5" cy="8.5" r="8.5" transform="translate(398.67 -282)"/>
+    </g>
+  </g>
+</svg>

@@ -1,1 +1,7 @@
-<?xml version="1.0" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="254.633 379.833 48.536 3" width="48.536px" height="3px"><path d=" M 256.133 381.333 L 278.078 381.333 L 301.669 381.333" id="Path" fill="none" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="288.877" height="274.083" viewBox="0 0 288.877 274.083">
+  <g id="Mouth2" transform="translate(-907.432 -438.284)">
+    <path id="Mouth1" d="M410.663-139.59S344.2,89.924,610.506,29.419" transform="matrix(0.777, -0.629, 0.629, 0.777, 689.434, 931.859)" fill="none" stroke="#000" stroke-width="5"/>
+    <path id="Path_2" data-name="Path 2" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(531 749)" fill="none" stroke="#000" stroke-width="2"/>
+    <path id="Path_3" data-name="Path 3" d="M376.631-168.909c2.06-.417,3.06-12.013,13.972-15.241,3.808-1.13,11.086.112,17.795,1.948" transform="translate(802.138 371.147) rotate(53)" fill="none" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>
