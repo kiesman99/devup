@@ -201,78 +201,76 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 ),
               ),
             ),
-            ColorRect(
-              color: Colors.green.withOpacity(0.3),
-              height: 50.0,
-              marginTop: 160.0,
-              child: PageView.builder(
-                controller: holderControllers["hairs"],
-                itemCount: bodyParts["hairs"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
-            ColorRect(
-              color: Colors.blue.withOpacity(0.3),
-              height: 40.0,
-              marginTop: 210.0,
-              child: PageView.builder(
-                controller: holderControllers["eyes"],
-                itemCount: bodyParts["eyes"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
-            ColorRect(
-              color: Colors.red.withOpacity(0.3),
-              height: 45.0,
-              marginTop: 250.0,
-              child: PageView.builder(
-                controller: holderControllers["noses"],
-                itemCount: bodyParts["noses"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
-            ColorRect(
-              color: Colors.yellow.withOpacity(0.3),
-              height: 45.0,
-              marginTop: 295.0,
-              child: PageView.builder(
-                controller: holderControllers["mouths"],
-                itemCount: bodyParts["mouths"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
-            ColorRect(
-              color: Colors.black.withOpacity(0.3),
-              height: 55.0,
-              marginTop: 340.0,
-              child: PageView.builder(
-                controller: holderControllers["beards"],
-                itemCount: bodyParts["beards"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
-            ColorRect(
-              color: Colors.purple.withOpacity(0.3),
-              height: 105.0,
-              marginTop: 395.0,
-              child: PageView.builder(
-                controller: holderControllers["bodies"],
-                itemCount: bodyParts["bodies"].length,
-                itemBuilder: (_, __){
-                  return Container();
-                },
-              ),
-            ),
+            Column(
+              children: <Widget>[
+                ColorRect(
+                  color: Colors.green.withOpacity(0.3),
+                  height: 150.0,
+                  child: PageView.builder(
+                    controller: holderControllers["hairs"],
+                    itemCount: bodyParts["hairs"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+                ColorRect(
+                  color: Colors.blue.withOpacity(0.3),
+                  height: 40.0,
+                  child: PageView.builder(
+                    controller: holderControllers["eyes"],
+                    itemCount: bodyParts["eyes"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+                ColorRect(
+                  color: Colors.red.withOpacity(0.3),
+                  height: 45.0,
+                  child: PageView.builder(
+                    controller: holderControllers["noses"],
+                    itemCount: bodyParts["noses"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+                ColorRect(
+                  color: Colors.yellow.withOpacity(0.3),
+                  height: 45.0,
+                  child: PageView.builder(
+                    controller: holderControllers["mouths"],
+                    itemCount: bodyParts["mouths"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+                ColorRect(
+                  color: Colors.black.withOpacity(0.3),
+                  height: 55.0,
+                  child: PageView.builder(
+                    controller: holderControllers["beards"],
+                    itemCount: bodyParts["beards"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+                ColorRect(
+                  color: Colors.purple.withOpacity(0.3),
+                  height: 105.0,
+                  child: PageView.builder(
+                    controller: holderControllers["bodies"],
+                    itemCount: bodyParts["bodies"].length,
+                    itemBuilder: (_, __){
+                      return Container();
+                    },
+                  ),
+                ),
+              ],
+            )
           ],
         )
       ),
