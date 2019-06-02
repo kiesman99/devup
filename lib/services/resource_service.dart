@@ -8,6 +8,7 @@ class ResourceService
       'Hair2': 'Hair2.svg',
       'Hair3': 'Hair3.svg',
       'Hair4': 'Hair4.svg',
+      'Hair5': 'Hair5.svg',
     },
     eyes: {
       'Eyes1': 'Eyes1.svg',
@@ -19,7 +20,6 @@ class ResourceService
       'Eyes7': 'Eyes7.svg',
       'Eyes8': 'Eyes8.svg',
       'Eyes9': 'Eyes9.svg',
-      'Eyes10': 'Eyes10.svg',
     },
     noses: {
       'Nose1': 'Nose1.svg',
@@ -33,13 +33,23 @@ class ResourceService
       'Mouth3': 'Mouth3.svg',
       'Mouth4': 'Mouth4.svg',
       'Mouth5': 'Mouth5.svg',
+      'Mouth6': 'Mouth6.svg',
     },
     beards: {
       'Beard1': 'Beard1.svg',
       'Beard2': 'Beard2.svg',
       'Beard3': 'Beard3.svg',
       'Beard4': 'Beard4.svg',
-    }
+      'Beard5': 'Beard5.svg',
+      'Beard5': 'Beard6.svg',
+    },
+      bodies: {
+        'Body1': 'Body1.svg',
+        'Body2': 'Body2.svg',
+        'Body3': 'Body3.svg',
+        'Body4': 'Body4.svg',
+        'Body5': 'Body5.svg',
+      }
   );
 
   List<String> programmingLanguages = const ['Algol', 'Fortran', 'C', 'Dart','Flutter'];
