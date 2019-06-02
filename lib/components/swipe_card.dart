@@ -16,7 +16,7 @@ class SwipingCard extends StatelessWidget {
     final String experience = backend<ResourceService>().experience[user.experience];
 
     return Card(
-      color: Colors.transparent,
+      color: Colors.green.withOpacity(0.3),
       elevation: 4.0,
       child: Container(                      
         width: screenSize.width / 1.2,

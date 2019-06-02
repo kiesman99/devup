@@ -1,3 +1,4 @@
+import 'package:devup/components/color_rect.dart';
 import 'package:devup/components/setup_navigation.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
@@ -13,19 +14,17 @@ class AvatarCreatorPage extends StatefulWidget {
 class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
 
-
-
   /// create the actual controller which
   /// determine the position of the
   /// actual bodyPart
-  Map<String, PageController> actualControllers = {
-    "bodies" : new PageController(),
-    "heads" : new PageController(),
-    "hairs" : new PageController(),
-    "eyes" : new PageController(),
-    "noses" : new PageController(),
-    "mouths" : new PageController(),
-    "beards" : new PageController(),
+  Map<String, ScrollController> actualControllers = {
+    "bodies" : new ScrollController(),
+    "heads" : new ScrollController(),
+    "hairs" : new ScrollController(),
+    "eyes" : new ScrollController(),
+    "noses" : new ScrollController(),
+    "mouths" : new ScrollController(),
+    "beards" : new ScrollController(),
   };
 
   /// create the pageController holder
@@ -52,6 +51,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
     "beards" : backend<ResourceService>().avatarParts.beards,
   };
 
+  double get _screenWidth => MediaQuery.of(context).size.width;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -64,6 +65,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
         actualControllers.values.elementAt(i).jumpTo(holderController.offset);
       });
     }
+
 
     super.initState();
   }
@@ -78,18 +80,23 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
           children: <Widget>[
             //Body
             Container(
-              child: PageView.builder(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["bodies"],
                 itemCount: bodyParts["bodies"].length,
-                itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                    "assets/SVG/Body/" + bodyParts["bodies"].values.elementAt(index),
+                itemBuilder: (_, index){
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                      "assets/SVG/Body/" + bodyParts["bodies"].values.elementAt(index),
+                    ),
                   );
                 },
               ),
             ),
             // Head
             Container(
+              width: _screenWidth,
               child: SvgPicture.asset(
                 "assets/SVG/Head.svg",
                 color: Color.fromRGBO( 255, 205, 148, 1),
@@ -97,66 +104,91 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
             ),
             // HAIR
             Container(
-              child: PageView.builder(
+              width: _screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["hairs"],
                 itemCount: bodyParts["hairs"].length,
                 itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                      "assets/SVG/Hair/" + bodyParts["hairs"].values.elementAt(index)
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                        "assets/SVG/Hair/" + bodyParts["hairs"].values.elementAt(index)
+                    ),
                   );
                 },
               ),
             ),
             // EYES
             Container(
-              child: PageView.builder(
+              width: _screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["eyes"],
                 itemCount: bodyParts["eyes"].length,
                 itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                      "assets/SVG/Eyes/" + bodyParts["eyes"].values.elementAt(index)
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                        "assets/SVG/Eyes/" + bodyParts["eyes"].values.elementAt(index)
+                    ),
                   );
                 },
               ),
             ),
             // NOSE
             Container(
-              child: PageView.builder(
+              width: _screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["noses"],
                 itemCount: bodyParts["noses"].length,
                 itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                    "assets/SVG/Nose/" + bodyParts["noses"].values.elementAt(index),
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                      "assets/SVG/Nose/" + bodyParts["noses"].values.elementAt(index),
+                    ),
                   );
                 },
               ),
             ),
             // MOUTH
             Container(
-              child: PageView.builder(
+              width: _screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["mouths"],
                 itemCount: bodyParts["mouths"].length,
                 itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                      "assets/SVG/Mouth/" + bodyParts["mouths"].values.elementAt(index)
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                        "assets/SVG/Mouth/" + bodyParts["mouths"].values.elementAt(index)
+                    ),
                   );
                 },
               ),
             ),
             // BEARD
             Container(
-              child: PageView.builder(
+              width: _screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 controller: actualControllers["beards"],
                 itemCount: bodyParts["beards"].length,
                 itemBuilder: (context, index){
-                  return SvgPicture.asset(
-                    "assets/SVG/Beard/" + bodyParts["beards"].values.elementAt(index),
+                  return Container(
+                    width: _screenWidth,
+                    child: SvgPicture.asset(
+                      "assets/SVG/Beard/" + bodyParts["beards"].values.elementAt(index),
+                    ),
                   );
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
+            ColorRect(
+              color: Colors.green.withOpacity(0.3),
               height: 50.0,
               marginTop: 160.0,
               child: PageView.builder(
@@ -167,8 +199,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
+            ColorRect(
+              color: Colors.blue.withOpacity(0.3),
               height: 40.0,
               marginTop: 210.0,
               child: PageView.builder(
@@ -179,8 +211,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
+            ColorRect(
+              color: Colors.red.withOpacity(0.3),
               height: 45.0,
               marginTop: 250.0,
               child: PageView.builder(
@@ -191,8 +223,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
+            ColorRect(
+              color: Colors.yellow.withOpacity(0.3),
               height: 45.0,
               marginTop: 295.0,
               child: PageView.builder(
@@ -203,8 +235,8 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
+            ColorRect(
+              color: Colors.pink.withOpacity(0.3),
               height: 55.0,
               marginTop: 340.0,
               child: PageView.builder(
@@ -215,9 +247,9 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                 },
               ),
             ),
-            _ColorRect(
-              color: Colors.transparent,
-              height: 110.0,
+            ColorRect(
+              color: Colors.purple.withOpacity(0.3),
+              height: 105.0,
               marginTop: 395.0,
               child: PageView.builder(
                 controller: holderControllers["bodies"],
@@ -240,34 +272,4 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 }
 
 
-/// Just a simple placeholder
-/// SVG PLACEHOLDER
-class _ColorRect extends StatelessWidget {
 
-  final Color color;
-  final double height;
-  final double width;
-  final double marginTop;
-  final double marginBottom;
-  final Widget child;
-
-  _ColorRect({this.color, this.height, this.width, this.marginTop = 0, this.marginBottom = 0, this.child});
-
-  _ColorRect.symmetric({Color color, double size}) : this(color: color, height: size, width: size);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: marginTop,
-        bottom: marginBottom
-      ),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: color
-      ),
-      child: child ?? Container(),
-    );
-  }
-}
