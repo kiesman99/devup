@@ -5,15 +5,15 @@
     </clipPath>
   </defs>
   <g id="Mouth4" transform="translate(-510 -20)">
-    <g id="Mouth4-2" data-name="Mouth4" transform="translate(1018 591)" fill="none" stroke="#000" stroke-width="5">
-      <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
-      <circle cx="33.5" cy="33.5" r="31" fill="none"/>
-    </g>
     <g id="Holder" transform="translate(510 20)" opacity="0" clip-path="url(#clip-path)">
       <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
         <rect width="1072" height="1129" stroke="none"/>
         <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
       </g>
+    </g>
+    <g id="Mouth4-2" data-name="Mouth4" transform="translate(1012 615)" fill="none" stroke="#000" stroke-width="5">
+      <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
+      <circle cx="33.5" cy="33.5" r="31" fill="none"/>
     </g>
   </g>
 </svg>
