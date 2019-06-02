@@ -49,6 +49,9 @@ class ResourceService
         'Body3': 'Body3.svg',
         'Body4': 'Body4.svg',
         'Body5': 'Body5.svg',
+      },
+      heads: {
+        'Head1' : "Head.svg"
       }
   );
 
