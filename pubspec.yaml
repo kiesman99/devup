@@ -61,6 +61,7 @@ flutter:
     - assets/SVG/Mouth/
     - assets/SVG/Nose/
     - assets/SVG/Head.svg
+    - assets/SVG/Body/
     - assets/SVG/Body.svg
     - assets/SVG/Glasses.svg
     - assets/SVG/Beard/
