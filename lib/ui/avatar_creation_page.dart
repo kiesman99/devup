@@ -79,112 +79,126 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
           overflow: Overflow.visible,
           children: <Widget>[
             //Body
-            Container(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["bodies"],
-                itemCount: bodyParts["bodies"].length,
-                itemBuilder: (_, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                      "assets/SVG/Body/" + bodyParts["bodies"].values.elementAt(index),
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["bodies"],
+                  itemCount: bodyParts["bodies"].length,
+                  itemBuilder: (_, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                        "assets/SVG/Body/" + bodyParts["bodies"].values.elementAt(index),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             // Head
-            Container(
-              width: _screenWidth,
-              child: SvgPicture.asset(
-                "assets/SVG/Head.svg",
-                color: Color.fromRGBO( 255, 205, 148, 1),
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: SvgPicture.asset(
+                  "assets/SVG/Head.svg",
+                  color: Color.fromRGBO( 255, 205, 148, 1),
+                ),
               ),
             ),
             // HAIR
-            Container(
-              width: _screenWidth,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["hairs"],
-                itemCount: bodyParts["hairs"].length,
-                itemBuilder: (context, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                        "assets/SVG/Hair/" + bodyParts["hairs"].values.elementAt(index)
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["hairs"],
+                  itemCount: bodyParts["hairs"].length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                          "assets/SVG/Hair/" + bodyParts["hairs"].values.elementAt(index)
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             // EYES
-            Container(
-              width: _screenWidth,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["eyes"],
-                itemCount: bodyParts["eyes"].length,
-                itemBuilder: (context, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                        "assets/SVG/Eyes/" + bodyParts["eyes"].values.elementAt(index)
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["eyes"],
+                  itemCount: bodyParts["eyes"].length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                          "assets/SVG/Eyes/" + bodyParts["eyes"].values.elementAt(index)
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             // NOSE
-            Container(
-              width: _screenWidth,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["noses"],
-                itemCount: bodyParts["noses"].length,
-                itemBuilder: (context, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                      "assets/SVG/Nose/" + bodyParts["noses"].values.elementAt(index),
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["noses"],
+                  itemCount: bodyParts["noses"].length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                        "assets/SVG/Nose/" + bodyParts["noses"].values.elementAt(index),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             // MOUTH
-            Container(
-              width: _screenWidth,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["mouths"],
-                itemCount: bodyParts["mouths"].length,
-                itemBuilder: (context, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                        "assets/SVG/Mouth/" + bodyParts["mouths"].values.elementAt(index)
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["mouths"],
+                  itemCount: bodyParts["mouths"].length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                          "assets/SVG/Mouth/" + bodyParts["mouths"].values.elementAt(index)
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             // BEARD
-            Container(
-              width: _screenWidth,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                controller: actualControllers["beards"],
-                itemCount: bodyParts["beards"].length,
-                itemBuilder: (context, index){
-                  return Container(
-                    width: _screenWidth,
-                    child: SvgPicture.asset(
-                      "assets/SVG/Beard/" + bodyParts["beards"].values.elementAt(index),
-                    ),
-                  );
-                },
+            IgnorePointer(
+              child: Container(
+                width: _screenWidth,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: actualControllers["beards"],
+                  itemCount: bodyParts["beards"].length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      width: _screenWidth,
+                      child: SvgPicture.asset(
+                        "assets/SVG/Beard/" + bodyParts["beards"].values.elementAt(index),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             ColorRect(
@@ -236,7 +250,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
               ),
             ),
             ColorRect(
-              color: Colors.pink.withOpacity(0.3),
+              color: Colors.black.withOpacity(0.3),
               height: 55.0,
               marginTop: 340.0,
               child: PageView.builder(
