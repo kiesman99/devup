@@ -31,7 +31,7 @@ abstract class DatabaseService {
 
   Future<User> getCurrentUser();
 
-   Stream<List<User>> matchUsers();
+  Stream<List<User>> matchUsers();
 }
 
 class DatabaseServiceFireStore implements DatabaseService {
