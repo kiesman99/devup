@@ -113,6 +113,7 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
         ),
       ),
       bottomNavigationBar: SetupNavigationBar(
+        context: context,
         nextPageCallback: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => ContactCreationPage()));
         },

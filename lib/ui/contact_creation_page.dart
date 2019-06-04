@@ -83,6 +83,7 @@ class _ContactCreationPageState extends State<ContactCreationPage> {
         )
       ),
       bottomNavigationBar: SetupNavigationBar(
+        context: context,
         nextPageCallback: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => SwipingPage()));
         },
