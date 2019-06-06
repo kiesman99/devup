@@ -58,16 +58,14 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
     return Scaffold(
       body: SafeArea(
         child: Stack(
+          fit: StackFit.passthrough,
+          overflow: Overflow.visible,
           children: <Widget>[
             //Body
             ...actualAvatars(),
             // TODO: Change Column to Stack
             // TODO: Wrap each ColorRect inside a Positioned
-            Column(
-              children: <Widget>[
-                ...holderAvatars(),
-              ],
-            )
+
           ],
         )
       ),

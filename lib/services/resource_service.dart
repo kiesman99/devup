@@ -50,42 +50,51 @@ class ResourceService {
   });
 
   Map<String, AvatarPart> avatarBody = {
-    "bodies": AvatarPart(
-        parts: avatarParts.bodies,
-        resourceDir: "assets/SVG/Body",
-        height: 105.0,
-        order: 6,
-        customColor: Colors.blue),
     "heads": AvatarPart(
         parts: avatarParts.heads,
         resourceDir: "assets/SVG",
         order: 0,
+        top: 80,
+        height: 280,
         customColor: Color.fromRGBO(255, 204, 153, 1.0)),
     "hairs": AvatarPart(
         parts: avatarParts.hairs,
         resourceDir: "assets/SVG/Hair",
-        height: 150.0,
-        order: 1),
+        height: 400.0,
+        order: 1,
+        ),
     "eyes": AvatarPart(
         parts: avatarParts.eyes,
         resourceDir: "assets/SVG/Eyes",
+        top: 150,
         height: 40.0,
+        backgroundColor: Colors.red,
         order: 2),
     "noses": AvatarPart(
         parts: avatarParts.noses,
         resourceDir: "assets/SVG/Nose",
+        top: 200,
         height: 45.0,
         order: 3),
     "mouths": AvatarPart(
         parts: avatarParts.mouths,
         resourceDir: "assets/SVG/Mouth",
         height: 45.0,
+        top: 300,
         order: 4),
     "beards": AvatarPart(
         parts: avatarParts.beards,
         resourceDir: "assets/SVG/Beard",
         height: 55.0,
-        order: 5)
+        top: 350,
+        order: 5),
+    "bodies": AvatarPart(
+        parts: avatarParts.bodies,
+        resourceDir: "assets/SVG/Body",
+        height: 105.0,
+        top: 400,
+        order: 6,
+        customColor: Colors.blue),
   };
 
   List<String> programmingLanguages = const [

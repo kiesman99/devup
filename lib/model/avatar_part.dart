@@ -24,7 +24,10 @@ class AvatarPart {
   /// the height of the holder PageView
   /// should resemble the space in which
   /// the user can do it's gesture
-  double height;
+  double height = 0;
+
+  /// the y position inside the stack
+  double top = 0;
 
   /// Handles the order in which the holder PageViews
   /// are rendered
@@ -33,14 +36,18 @@ class AvatarPart {
   /// The Color which will be layed over the SVG
   Color customColor;
 
+  Color backgroundColor;
+
   AvatarPart({
     @required this.parts,
     @required this.resourceDir,
     @required this.order,
-    this.height = 0.0,
-    this.customColor
+    this.height,
+    this.top,
+    this.customColor,
+    this.backgroundColor
   }) :
-    actualController = new ScrollController(),
+    actualController = new PageController(),
     holderController = new PageController() {
 
     holderController.addListener(() {
