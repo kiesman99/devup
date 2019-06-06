@@ -1,5 +1,4 @@
 import 'package:devup/components/body_part.dart';
-import 'package:devup/components/color_rect.dart';
 import 'package:devup/components/setup_navigation.dart';
 import 'package:devup/model/avatar_part.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +40,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
     ..sort((a, b) => a.order.compareTo(b.order));
 
     return sortedList.map((part) {
-      return ColorRect(
+      return Container(
           color: Colors.transparent,
           height: part.height,
           child: PageView.builder(
