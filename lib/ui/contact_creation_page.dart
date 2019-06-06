@@ -1,4 +1,4 @@
-import 'package:devup/components/setup_navigation.dart';
+import 'package:devup/widgets/setup_navigation.dart';
 import 'package:devup/ui/swiping_page.dart';
 import 'package:flutter/material.dart';
 

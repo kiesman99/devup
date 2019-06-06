@@ -1,7 +1,7 @@
 import 'package:devup/backend.dart';
-import 'package:devup/components/choice_chips.dart';
-import 'package:devup/components/selection_chip.dart';
-import 'package:devup/components/setup_navigation.dart';
+import 'package:devup/widgets/choice_chips.dart';
+import 'package:devup/widgets/selection_chip.dart';
+import 'package:devup/widgets/setup_navigation.dart';
 import 'package:devup/services/database_service.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';

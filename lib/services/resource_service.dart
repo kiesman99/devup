@@ -1,4 +1,4 @@
-import 'package:devup/model/avatar.dart';
+import 'package:devup/model/avatar_parts.dart';
 
 class ResourceService
 {

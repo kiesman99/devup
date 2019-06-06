@@ -1,5 +1,5 @@
-import 'package:devup/components/body_part.dart';
-import 'package:devup/components/setup_navigation.dart';
+import 'package:devup/widgets/body_part.dart';
+import 'package:devup/widgets/setup_navigation.dart';
 import 'package:devup/model/avatar_part.dart';
 import 'package:flutter/material.dart';
 
