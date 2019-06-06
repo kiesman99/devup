@@ -12,8 +12,7 @@ class AvatarCreatorPage extends StatefulWidget {
 
 class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 
-  /// Get the [AvatarCreatorService.bodyMap] saved in [AvatarCreatorService]
-  Map<String, AvatarPart> get bodyMap => backend<AvatarCreatorService>().bodyMap;
+  Map<String, AvatarPart> get bodyMap => backend<ResourceService>().avatarBody;
 
   /// Returns the Avatar Parts, each inside a ScrollView.
   /// Will be generated from [AvatarCreatorService.bodyMap]

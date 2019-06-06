@@ -15,6 +15,5 @@ GetIt backend = GetIt();
 void initBackend() {
     backend.registerSingleton<UserManager>(UserManager());
     backend.registerSingleton<ResourceService>(ResourceService());
-    backend.registerSingleton<AvatarCreatorService>(AvatarCreatorService());
     backend.registerSingleton<DatabaseService>(DatabaseServiceFireStore());
 }
