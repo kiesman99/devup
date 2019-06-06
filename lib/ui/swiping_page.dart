@@ -1,5 +1,5 @@
 import 'package:devup/backend.dart';
-import 'package:devup/components/swipe_card.dart';
+import 'package:devup/widgets/swipe_card.dart';
 import 'package:devup/model/user.dart';
 import 'package:devup/services/database_service.dart';
 import 'package:flutter/material.dart';
