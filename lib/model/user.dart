@@ -10,6 +10,8 @@ class User {
   String nose;
   String mouth;
   String chin;
+  String body;
+  int skinColor;
 
   List<String> spokenLanguages;
 
@@ -27,7 +29,25 @@ class User {
 
   int experience;
 
-  User();
+  User({
+    this.userName,
+    this.hair,
+    this.eyes,
+    this.mouth,
+    this.chin,
+    this.nose,
+    this.body,
+    this.skinColor,
+    this.programmingLanguages,
+    this.age,
+    this.gender,
+    this.emailOrPhone,
+    this.occupation,
+    this.experience,
+    this.location,
+    this.personalInfo,
+    this.spokenLanguages,
+  });
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User()
@@ -37,6 +57,8 @@ class User {
       ..nose = json['nose'] as String
       ..mouth = json['mouth'] as String
       ..chin = json['chin'] as String
+      ..chin = json['body'] as String
+      ..skinColor = json['skinColor'] as int 
       ..spokenLanguages =
           (json['spokenLanguages'] as List)?.map((e) => e as String)?.toList()
       ..location = json['location']
@@ -57,6 +79,8 @@ class User {
       'nose': nose,
       'mouth': mouth,
       'chin': chin,
+      'body' : body,
+      'skinColor' : skinColor,
       'spokenLanguages': spokenLanguages,
       'location': location,
       'age': age,

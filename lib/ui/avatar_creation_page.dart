@@ -1,3 +1,4 @@
+import 'package:devup/model/user.dart';
 import 'package:devup/widgets/avtar_swipe_area.dart';
 import 'package:devup/widgets/setup_navigation.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,9 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
   Widget build(BuildContext context) {
     var parts = backend<ResourceService>().avatarParts;
     return Scaffold(
+      //Just for testing
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
+      onPressed: addUsers,),
       body: SafeArea(
           child: Stack(
         fit: StackFit.passthrough,
@@ -95,4 +99,73 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
       ),
     );
   }
+}
+
+
+Future<void> addUsers() async
+{
+     await backend<DatabaseService>().saveUser(User(
+      hair: 'Hair1',
+      eyes: 'Eyes1',
+      nose: 'Nose1',
+      mouth: 'Mouth1',
+      chin: 'Beard1',
+      body: 'Body1',
+      userName: 'user1',
+      age: 23,
+      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+      gender: 'Male',
+      emailOrPhone: '',
+      experience: 1,
+      programmingLanguages: ['Fortran','C','Dart','Flutter'],
+      spokenLanguages: ['German'],      
+    ));
+    await backend<DatabaseService>().saveUser(User(
+      hair: 'Hair2',
+      eyes: 'Eyes2',
+      nose: 'Nose2',
+      mouth: 'Mouth2',
+      chin: 'Beard2',
+      body: 'Body2',
+      userName: 'user2',
+      age: 23,
+      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+      gender: 'Female',
+      emailOrPhone: '',
+      experience: 1,
+      programmingLanguages: ['Fortran','C'],
+      spokenLanguages: ['German','English'],      
+    ));
+    await backend<DatabaseService>().saveUser(User(
+      hair: 'Hair3',
+      eyes: 'Eyes3',
+      nose: 'Nose3',
+      mouth: 'Mouth3',
+      chin: 'Beard3',
+      body: 'Body3',
+      userName: 'user3',
+      age: 45,
+      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+      gender: 'Male',
+      emailOrPhone: '',
+      experience: 0,
+      programmingLanguages: ['Flutter'],
+      spokenLanguages: ['German'],      
+    ));
+    await backend<DatabaseService>().saveUser(User(
+      hair: 'Hair4',
+      eyes: 'Eyes4',
+      nose: 'Nose4',
+      mouth: 'Mouth4',
+      chin: 'Beard4',
+      body: 'Body4',
+      userName: 'user4',
+      age: 25,
+      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+      gender: 'Female',
+      emailOrPhone: '',
+      experience: 1,
+      programmingLanguages: ['Fortran','C','Dart','Flutter'],
+      spokenLanguages: ['German'],      
+    ));
 }
