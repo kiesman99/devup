@@ -3,6 +3,8 @@ import 'package:devup/widgets/avtar_swipe_area.dart';
 import 'package:devup/widgets/setup_navigation.dart';
 import 'package:flutter/material.dart';
 
+//@Justin besser immer über den packagenamen als relativ importieren
+// wenn man das mischt kann get_it probleme bekommen
 import '../backend.dart';
 
 class AvatarCreatorPage extends StatefulWidget {

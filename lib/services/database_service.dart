@@ -27,7 +27,7 @@ class ObjectDoesNotExistsException implements Exception {
 abstract class DatabaseService {
   User currentUser;
 
-  Future<bool> saveUser();
+  Future<bool> saveUser(User user);
 
   Future<User> getCurrentUser();
 
@@ -42,20 +42,21 @@ class DatabaseServiceFireStore implements DatabaseService {
   ///////////////////////////////////////////////////////////////////////////////////
 
   @override
-  Future<bool> saveUser() async {
+  Future<bool> saveUser(User user) async {
     try {
-      if (currentUser.id == null)
+      if (user.id == null)
       {
         Uuid uuid = Uuid();
-        currentUser.id = uuid.v1();
+        user.id = uuid.v1();
       }
       await userCollection
-          .document(currentUser.id)
-          .setData(currentUser.toJson());
+          .document(user.id)
+          .setData(user.toJson());
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('userData', json.encode(currentUser.toJson()));
+      prefs.setString('userData', json.encode(user.toJson()));
 
+      currentUser = user;
       return true;
     } catch (e) {
       print(e);

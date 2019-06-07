@@ -23,6 +23,8 @@ dependencies:
   firebase: any
   firestore_helpers: any
   get_it: any
+  rx_command: any
+  rxdart: any
   json_serializable: any
   json_annotation: any
   shared_preferences: any
