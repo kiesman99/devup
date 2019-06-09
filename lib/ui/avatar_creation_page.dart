@@ -18,12 +18,14 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
     var parts = backend<ResourceService>().avatarParts;
     return Scaffold(
       //Just for testing
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
-      onPressed: addUsers,),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: addUsers,
+      // ),
       body: SafeArea(
           child: Stack(
-        fit: StackFit.passthrough,
-        overflow: Overflow.visible,
+        fit: StackFit.expand,
+        overflow: Overflow.clip,
         children: <Widget>[
           // Head
           Positioned(
@@ -56,21 +58,17 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                /// Here is something wrong with the Expanded elements. 
-                /// actually I don't know hy we need it here at all
-                Expanded(
-                  child: AvatarSwipeArea(
-                    imageHeight: 40,
-                    parts: parts.eyes,
-                    backgroundColor: Colors.red,
-                  ),
+                AvatarSwipeArea(
+                swipeAeraHeight: 80,
+                  imageHeight: 40,
+                  parts: parts.eyes,
+                  backgroundColor: Colors.red,
                 ),
-                Expanded(
-                  child: AvatarSwipeArea(
-                    imageHeight: 60,
-                    parts: parts.noses,
-                    backgroundColor: Colors.blue,
-                  ),
+                AvatarSwipeArea(
+                  swipeAeraHeight: 80,
+                  imageHeight: 60,
+                  parts: parts.noses,
+                  backgroundColor: Colors.blue,
                 ),
                 AvatarSwipeArea(
                   swipeAeraHeight: 80,
@@ -90,7 +88,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
                   parts: parts.bodies,
                   backgroundColor: Colors.purple,
                 ),
-                Spacer(),
+                //Spacer(),
               ],
             ),
           )
@@ -103,71 +101,69 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
   }
 }
 
-
-Future<void> addUsers() async
-{
-     await backend<DatabaseService>().saveUser(User(
-      hair: 'Hair1',
-      eyes: 'Eyes1',
-      nose: 'Nose1',
-      mouth: 'Mouth1',
-      chin: 'Beard1',
-      body: 'Body1',
-      userName: 'user1',
-      age: 23,
-      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
-      gender: 'Male',
-      emailOrPhone: '',
-      experience: 1,
-      programmingLanguages: ['Fortran','C','Dart','Flutter'],
-      spokenLanguages: ['German'],      
-    ));
-    await backend<DatabaseService>().saveUser(User(
-      hair: 'Hair2',
-      eyes: 'Eyes2',
-      nose: 'Nose2',
-      mouth: 'Mouth2',
-      chin: 'Beard2',
-      body: 'Body2',
-      userName: 'user2',
-      age: 23,
-      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
-      gender: 'Female',
-      emailOrPhone: '',
-      experience: 1,
-      programmingLanguages: ['Fortran','C'],
-      spokenLanguages: ['German','English'],      
-    ));
-    await backend<DatabaseService>().saveUser(User(
-      hair: 'Hair3',
-      eyes: 'Eyes3',
-      nose: 'Nose3',
-      mouth: 'Mouth3',
-      chin: 'Beard3',
-      body: 'Body3',
-      userName: 'user3',
-      age: 45,
-      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
-      gender: 'Male',
-      emailOrPhone: '',
-      experience: 0,
-      programmingLanguages: ['Flutter'],
-      spokenLanguages: ['German'],      
-    ));
-    await backend<DatabaseService>().saveUser(User(
-      hair: 'Hair4',
-      eyes: 'Eyes4',
-      nose: 'Nose4',
-      mouth: 'Mouth4',
-      chin: 'Beard4',
-      body: 'Body4',
-      userName: 'user4',
-      age: 25,
-      skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
-      gender: 'Female',
-      emailOrPhone: '',
-      experience: 1,
-      programmingLanguages: ['Fortran','C','Dart','Flutter'],
-      spokenLanguages: ['German'],      
-    ));
+Future<void> addUsers() async {
+  await backend<DatabaseService>().saveUser(User(
+    hair: 'Hair1',
+    eyes: 'Eyes1',
+    nose: 'Nose1',
+    mouth: 'Mouth1',
+    chin: 'Beard1',
+    body: 'Body1',
+    userName: 'user1',
+    age: 23,
+    skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+    gender: 'Male',
+    emailOrPhone: '',
+    experience: 1,
+    programmingLanguages: ['Fortran', 'C', 'Dart', 'Flutter'],
+    spokenLanguages: ['German'],
+  ));
+  await backend<DatabaseService>().saveUser(User(
+    hair: 'Hair2',
+    eyes: 'Eyes2',
+    nose: 'Nose2',
+    mouth: 'Mouth2',
+    chin: 'Beard2',
+    body: 'Body2',
+    userName: 'user2',
+    age: 23,
+    skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+    gender: 'Female',
+    emailOrPhone: '',
+    experience: 1,
+    programmingLanguages: ['Fortran', 'C'],
+    spokenLanguages: ['German', 'English'],
+  ));
+  await backend<DatabaseService>().saveUser(User(
+    hair: 'Hair3',
+    eyes: 'Eyes3',
+    nose: 'Nose3',
+    mouth: 'Mouth3',
+    chin: 'Beard3',
+    body: 'Body3',
+    userName: 'user3',
+    age: 45,
+    skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+    gender: 'Male',
+    emailOrPhone: '',
+    experience: 0,
+    programmingLanguages: ['Flutter'],
+    spokenLanguages: ['German'],
+  ));
+  await backend<DatabaseService>().saveUser(User(
+    hair: 'Hair4',
+    eyes: 'Eyes4',
+    nose: 'Nose4',
+    mouth: 'Mouth4',
+    chin: 'Beard4',
+    body: 'Body4',
+    userName: 'user4',
+    age: 25,
+    skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
+    gender: 'Female',
+    emailOrPhone: '',
+    experience: 1,
+    programmingLanguages: ['Fortran', 'C', 'Dart', 'Flutter'],
+    spokenLanguages: ['German'],
+  ));
 }

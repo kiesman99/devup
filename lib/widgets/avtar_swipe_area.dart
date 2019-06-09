@@ -14,7 +14,7 @@ class AvatarSwipeArea extends StatelessWidget {
   AvatarSwipeArea({
     this.resourceDir,
     this.imageHeight,
-    this.swipeAeraHeight,
+    @required this.swipeAeraHeight,
     this.imageAlign,
     this.controller,
     this.parts,
@@ -33,7 +33,7 @@ class AvatarSwipeArea extends StatelessWidget {
           children: parts.entries
               .map<Widget>(
                 (part) => Container(
-                      height: swipeAeraHeight,
+                      height: imageHeight,
                       alignment:imageAlign,
                       child: SvgPicture.asset(
                         part.value,
