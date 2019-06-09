@@ -68,7 +68,7 @@ class User {
           ?.toList()
       ..emailOrPhone = json['emailOrPhone'] as String
       ..occupation = json['occupation'] as String
-      ..experience = int.parse(json['experience']);
+      ..experience = json['experience'];
   }
 
   Map<String, dynamic> toJson() {

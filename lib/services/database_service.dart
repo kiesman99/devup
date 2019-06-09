@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:devup/model/user.dart';
 import 'package:firestore_helpers/firestore_helpers.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:rxdart/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
@@ -27,31 +29,26 @@ class ObjectDoesNotExistsException implements Exception {
 abstract class DatabaseService {
   User currentUser;
 
+  PublishSubject<List<User>> matchingUsersStream;
+
   Future<bool> saveUser(User user);
 
   Future<User> getCurrentUser();
 
-  Stream<List<User>> matchUsers();
+  void matchUsers();
 }
 
 class DatabaseServiceFireStore implements DatabaseService {
   final userCollection = Firestore.instance.collection("users");
 
-  ////////////////////////////////////////////////////////////////////////////////////
-  /// Users
-  ///////////////////////////////////////////////////////////////////////////////////
-
   @override
   Future<bool> saveUser(User user) async {
     try {
-      if (user.id == null)
-      {
+      if (user.id == null) {
         Uuid uuid = Uuid();
         user.id = uuid.v1();
       }
-      await userCollection
-          .document(user.id)
-          .setData(user.toJson());
+      await userCollection.document(user.id).setData(user.toJson());
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('userData', json.encode(user.toJson()));
@@ -82,8 +79,24 @@ class DatabaseServiceFireStore implements DatabaseService {
     return currentUser;
   }
 
+  StreamSubscription matchingUsersSubscription;
+
   @override
-  Stream<List<User>> matchUsers() {
-    return userCollection.snapshots().map<List<User>>((doc) => doc.documents.map<User>((doc) => User.fromJson(doc.data)).toList());
+  void matchUsers() async {
+    matchingUsersSubscription?.cancel();
+
+    // Currently we don't do any matching but take the full user document collection
+    // instead of userCollection we would then use a Firestore Query
+    matchingUsersSubscription = Observable(userCollection.snapshots())
+        .map<Iterable<User>>((docSnapShots) => docSnapShots.documentChanges
+            // we only want initial and added documents
+            .where((documentChange) =>
+                documentChange.type == DocumentChangeType.added)
+            .map(
+              (docChange) => User.fromJson(docChange.document.data),
+            )).listen( (addedDocs) => matchingUsersStream.add(addedDocs.toList()));
   }
+
+  @override
+  PublishSubject<List<User>> matchingUsersStream = PublishSubject<List<User>>();
 }

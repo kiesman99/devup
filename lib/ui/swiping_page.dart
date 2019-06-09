@@ -41,7 +41,7 @@ class _SwipingPageState extends State<SwipingPage> {
               }
               return Container();
             },
-            stream: backend<DatabaseService>().matchUsers(),
+            stream: backend<MatchingManager>().activeUsers,
           )
         ),
       )
