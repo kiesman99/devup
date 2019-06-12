@@ -1,17 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="1072" height="1129" fill="none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="917.69897"
+   height="439"
+   viewBox="0 0 917.69897 439"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="Body5.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1052"
+     inkscape:window-height="563"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="0.20903454"
+     inkscape:cx="459.687"
+     inkscape:cy="526.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg18" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-path">
+      <rect
+         width="1072"
+         height="1129"
+         id="rect2"
+         x="0"
+         y="0"
+         style="fill:none" />
     </clipPath>
   </defs>
-  <g id="Body5" transform="translate(-534 -2)">
-    <path id="Kleidung1" d="M964.012,591H46.313a651.247,651.247,0,0,1,6.357-68.472A632.692,632.692,0,0,1,65.9,456.853a598.905,598.905,0,0,1,45.313-120.785A544.285,544.285,0,0,1,178.733,233a480.375,480.375,0,0,1,86.208-81H740.835a488.073,488.073,0,0,1,86.873,80.764,551.389,551.389,0,0,1,68.586,102.892A604.388,604.388,0,0,1,942.945,456.47a637.2,637.2,0,0,1,13.96,65.814A655.566,655.566,0,0,1,964.012,591Z" transform="translate(564 502)" fill="red"/>
-    <text id="_Flutter" data-name="#Flutter" transform="matrix(0.966, -0.259, 0.259, 0.966, 909.815, 1018.128)" font-size="103" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="0">#Flutter</tspan></text>
-    <g id="Holder" transform="translate(534 2)" opacity="0.001" clip-path="url(#clip-path)">
-      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
-        <rect width="1072" height="1129" stroke="none"/>
-        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
-      </g>
-    </g>
-  </g>
+  <path
+     style="fill:#ff0000"
+     inkscape:connector-curvature="0"
+     d="M 917.699,439 H 0 A 651.247,651.247 0 0 1 6.357,370.528 632.692,632.692 0 0 1 19.587,304.853 598.905,598.905 0 0 1 64.9,184.068 544.285,544.285 0 0 1 132.42,81 480.375,480.375 0 0 1 218.628,0 h 475.894 a 488.073,488.073 0 0 1 86.873,80.764 551.389,551.389 0 0 1 68.586,102.892 604.388,604.388 0 0 1 46.651,120.814 637.2,637.2 0 0 1 13.96,65.814 655.566,655.566 0 0 1 7.107,68.716 z"
+     id="Kleidung1" />
+  <text
+     style="font-size:103.01220703px;font-family:HelveticaNeue, 'Helvetica Neue';stroke-width:1.00011849"
+     font-size="103"
+     transform="rotate(-15.008914)"
+     data-name="#Flutter"
+     id="_Flutter"
+     x="194.98668"
+     y="429.26785">
+    <tspan
+       id="tspan8"
+       y="429.26785"
+       x="194.98668"
+       style="stroke-width:1.00011849">#Flutter</tspan>
+  </text>
 </svg>

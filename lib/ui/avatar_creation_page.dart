@@ -23,77 +23,98 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
       //   onPressed: addUsers,
       // ),
       body: SafeArea(
-          child: Stack(
-        fit: StackFit.expand,
-        overflow: Overflow.clip,
-        children: <Widget>[
-          // Head
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 75,
-            height: 280,
-            child: AvatarSwipeArea(
-              parts: parts.heads,
-              customColor: Color.fromRGBO(255, 204, 153, 1.0),
+        child: Stack(
+          children: <Widget>[
+            // Head
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 140,
+              height: 300,
+              child: AvatarSwipeArea(
+                swipeAeraHeight: 300,
+                imageAlign: Alignment.topCenter,
+                parts: parts.heads,
+                customColor: Color.fromRGBO(255, 204, 153, 1.0),
+                backgroundColor: Colors.blue,
+              ),
             ),
-          ),
-          //Hair
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 0,
-            height: 400,
-            child: AvatarSwipeArea(
-              parts: parts.hairs,
+            //Hair
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 20,
+              height: 400,
+              child: AvatarSwipeArea(
+                swipeAeraHeight: 400,
+                parts: parts.hairs,
+                imageAlign: Alignment.topCenter,
+              ),
             ),
-          ),
-          //All others
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 150,
-            bottom: 0,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                AvatarSwipeArea(
-                swipeAeraHeight: 80,
-                  imageHeight: 40,
-                  parts: parts.eyes,
-                  backgroundColor: Colors.red,
-                ),
-                AvatarSwipeArea(
-                  swipeAeraHeight: 80,
-                  imageHeight: 60,
-                  parts: parts.noses,
-                  backgroundColor: Colors.blue,
-                ),
-                AvatarSwipeArea(
-                  swipeAeraHeight: 80,
-                  imageHeight: 80,
-                  parts: parts.mouths,
-                  backgroundColor: Colors.green,
-                ),
-                AvatarSwipeArea(
-                  swipeAeraHeight: 80,
-                  imageHeight: 80,
-                  parts: parts.beards,
-                  backgroundColor: Colors.yellow,
-                ),
-                AvatarSwipeArea(
-                  swipeAeraHeight: 80,
-                  imageHeight: 80,
-                  parts: parts.bodies,
-                  backgroundColor: Colors.purple,
-                ),
-                //Spacer(),
-              ],
+            //Body
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: 120,
+              child: AvatarSwipeArea(
+                imageAlign: Alignment.bottomCenter,
+                swipeAeraHeight: 120,
+                imageHeight: 120,
+                parts: parts.bodies,
+              ),
             ),
-          )
-        ],
-      )),
+            //All others
+            // Positioned(
+            //   left: 0,
+            //   right: 0,
+            //   top: 150,
+            //   bottom: 0,
+            //   child: Container(
+            //     child: Column(
+            //       mainAxisSize: MainAxisSize.min,
+            //       crossAxisAlignment: CrossAxisAlignment.stretch,
+            //       children: [
+            //         SizedBox(
+            //           height: 30,
+            //         ),
+            //         AvatarSwipeArea(
+            //           imageAlign: Alignment.center,
+            //           swipeAeraHeight: 80,
+            //           imageHeight: 30,
+            //           parts: parts.eyes,
+            //         ),
+            //         AvatarSwipeArea(
+            //           imageAlign: Alignment.topCenter,
+            //           swipeAeraHeight: 80,
+            //           imageHeight: 50,
+            //           parts: parts.noses,
+            //         ),
+            //         Container(color: Colors.blue,
+            //           height: 200,
+            //           child: Stack(
+            //             children: [
+            //               AvatarSwipeArea(
+            //                 imageAlign: Alignment.bottomCenter,
+            //                 swipeAeraHeight: 120,
+            //                 imageHeight: 120,
+            //                 parts: parts.beards,
+            //               ),
+            //               AvatarSwipeArea(
+            //                 imageAlign: Alignment.center,
+            //                 swipeAeraHeight: 50,
+            //                 parts: parts.mouths,
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
+      ),
       bottomNavigationBar: SetupNavigationBar.noBackButton(
         nextPageCallback: () {},
       ),

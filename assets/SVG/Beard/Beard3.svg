@@ -1,16 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="1072" height="1129" fill="none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="157.07944"
+   height="298.99365"
+   viewBox="0 0 157.07944 298.99365"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="Beard3.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2004"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="0.83613817"
+     inkscape:cx="-22.791408"
+     inkscape:cy="152.4816"
+     inkscape:window-x="-16"
+     inkscape:window-y="-16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-path">
+      <rect
+         width="1072"
+         height="1129"
+         id="rect2"
+         x="0"
+         y="0"
+         style="fill:none" />
     </clipPath>
   </defs>
-  <g id="Beard3" transform="translate(-534 -5)">
-    <path id="Bart4" d="M986.27,564.524l2.564-12.367,11.081,3.549h15.519l12.443,2.459,9.537-2.459,7.289,4.153,14.352-1.694,6.806,4.56,9.669-2.867,7.755,2.867,15.69-7.02H1109.3l8.264-5.412,12.375,9.565v9.686l-12.375,8.5-5.981-4.78-7.066,7.483-11.465-4.578-9.766,1.876-11.888,2.7-11-4.578-8.162,6.2-14.824-1.624-6.727,3.792-2.81-8.37-9.342,4.578-14-7.483H994.275Z"/>
-    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
-      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
-        <rect width="1072" height="1129" stroke="none"/>
-        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
-      </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 6.17148,24.923363 2.564,-12.367 11.081,3.549 h 15.519 l 12.443,2.459 9.537,-2.459 7.289,4.153 14.352,-1.694 6.806,4.56 9.669,-2.867 7.755,2.867 15.69,-7.02 h 10.325 l 8.264,-5.412 12.375,9.565 v 9.686 l -12.375,8.5 -5.981,-4.78 -7.066,7.483 -11.465,-4.578 -9.766,1.876 -11.888,2.7 -11,-4.578 -8.162,6.2 -14.824,-1.624 -6.727,3.792 -2.81,-8.37 -9.342,4.578 -14,-7.483 h -10.258 z"
+     id="Bart4" />
+  <g
+     style="opacity:0"
+     clip-path="url(#clip-path)"
+     id="Holder"
+     transform="scale(0.14652933,0.26483051)">
+    <g
+       style="opacity:0.203;fill:#1ae209;stroke:#707070;stroke-width:1"
+       data-name="Holder"
+       id="Holder-2">
+      <rect
+         style="stroke:none"
+         y="0"
+         x="0"
+         id="rect8"
+         height="1129"
+         width="1072" />
+      <rect
+         style="fill:none"
+         id="rect10"
+         height="1128"
+         width="1071"
+         y="0.5"
+         x="0.5" />
     </g>
   </g>
 </svg>

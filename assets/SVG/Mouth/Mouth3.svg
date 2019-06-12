@@ -1,16 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="1072" height="1129" fill="none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="244.19063"
+   height="101.90466"
+   viewBox="0 0 244.19063 101.90465"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="Mouth3.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2004"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="4.7299117"
+     inkscape:cx="149.89753"
+     inkscape:cy="29.345904"
+     inkscape:window-x="-16"
+     inkscape:window-y="-16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-path">
+      <rect
+         width="1072"
+         height="1129"
+         id="rect2"
+         x="0"
+         y="0"
+         style="fill:none" />
     </clipPath>
   </defs>
-  <g id="Mouth3" transform="translate(-510 -20)">
-    <path id="Mouth3-2" data-name="Mouth3" d="M0,0H240" transform="translate(931.5 646.5)" fill="none" stroke="#000" stroke-width="5"/>
-    <g id="Holder" transform="translate(510 20)" opacity="0" clip-path="url(#clip-path)">
-      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
-        <rect width="1072" height="1129" stroke="none"/>
-        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
-      </g>
-    </g>
-  </g>
+  <rect
+     id="rect3714"
+     width="242.07642"
+     height="101.92658"
+     x="2.1142051"
+     y="0"
+     style="fill:none;stroke-width:0.94369602"
+     transform="matrix(1,0,-0.02074243,0.99978485,0,0)" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:5"
+     inkscape:connector-curvature="0"
+     d="M 1.4799432,48.558037 H 241.47994"
+     data-name="Mouth3"
+     id="Mouth3-2" />
 </svg>

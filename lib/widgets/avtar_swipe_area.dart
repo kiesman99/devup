@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 class AvatarSwipeArea extends StatelessWidget {
   final String resourceDir;
   final double imageHeight;
+  final double imageWidth;
   final double swipeAeraHeight;
   final Alignment imageAlign;
   final PageController controller;
@@ -14,6 +15,7 @@ class AvatarSwipeArea extends StatelessWidget {
   AvatarSwipeArea({
     this.resourceDir,
     this.imageHeight,
+    this.imageWidth,
     @required this.swipeAeraHeight,
     this.imageAlign,
     this.controller,
@@ -28,17 +30,19 @@ class AvatarSwipeArea extends StatelessWidget {
       height: swipeAeraHeight,
       color: backgroundColor,
       child: PageView(
-          scrollDirection: Axis.horizontal,
           controller: controller,
           children: parts.entries
               .map<Widget>(
                 (part) => Container(
-                      height: imageHeight,
-                      alignment:imageAlign,
+                      height: swipeAeraHeight,
+                      alignment: imageAlign,
                       child: SvgPicture.asset(
                         part.value,
+                        height: imageHeight,
+                        width: imageWidth,
                         color: customColor,
-                        fit: BoxFit.fitWidth, // will change to fitHeight as soon as the SVGs are resized
+                        fit: BoxFit
+                            .fitHeight, // will change to fitHeight as soon as the SVGs are resized
                       ),
                     ),
               )

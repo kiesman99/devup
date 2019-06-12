@@ -1,16 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="1072" height="1129" fill="none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1072"
+   height="798.91101"
+   viewBox="0 0 1072 798.91101"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="Hair2.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2004"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="0.20903454"
+     inkscape:cx="536"
+     inkscape:cy="234.41102"
+     inkscape:window-x="-16"
+     inkscape:window-y="-16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Hair2" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-path">
+      <rect
+         width="1072"
+         height="1129"
+         id="rect2"
+         x="0"
+         y="0"
+         style="fill:none" />
     </clipPath>
   </defs>
-  <g id="Hair2" transform="translate(-534 -5)">
-    <path id="Haar3" d="M1045.037,241.053l8.051,13.075h10.106l9.864-13.075,4.97-59.962V72l-4.97-21.428-9.864,10.052L1053.087,46.62l-8.051,14.007-8.365-10.052,4.312,30.515,4.054,36.6v37.2l-4.054,44.554Z"/>
-    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
-      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
-        <rect width="1072" height="1129" stroke="none"/>
-        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
-      </g>
+  <g
+     id="Hair2"
+     transform="translate(-534,-5)">
+    <path
+       id="Haar3"
+       d="m 1045.037,241.053 8.051,13.075 h 10.106 l 9.864,-13.075 4.97,-59.962 V 72 l -4.97,-21.428 -9.864,10.052 -10.107,-14.004 -8.051,14.007 -8.365,-10.052 4.312,30.515 4.054,36.6 v 37.2 l -4.054,44.554 z"
+       inkscape:connector-curvature="0" />
+    <g
+       style="opacity:0;fill:#1ae209;stroke:#707070;stroke-width:1"
+       data-name="Holder"
+       id="Holder-2"
+       transform="matrix(1,0,0,0.70762712,534,5)">
+      <rect
+         style="stroke:none"
+         y="0"
+         x="0"
+         id="rect8"
+         height="1129"
+         width="1072" />
+      <rect
+         style="fill:none"
+         id="rect10"
+         height="1128"
+         width="1071"
+         y="0.5"
+         x="0.5" />
     </g>
   </g>
 </svg>

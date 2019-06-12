@@ -1,16 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1072" height="1129" viewBox="0 0 1072 1129">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="1072" height="1129" fill="none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128.21919"
+   height="301.07758"
+   viewBox="0 0 128.21919 301.07758"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="Beard2.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2004"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="0.59123897"
+     inkscape:cx="-457.28892"
+     inkscape:cy="-515.22559"
+     inkscape:window-x="-16"
+     inkscape:window-y="-16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-path">
+      <rect
+         width="1072"
+         height="1129"
+         id="rect2"
+         x="0"
+         y="0"
+         style="fill:none" />
     </clipPath>
   </defs>
-  <g id="Beard2" transform="translate(-534 -5)">
-    <path id="Bart2" d="M1056.3,687.368l-.2-6.979,3.6-2.537,2.525,2.537,5.3-2.537,3.663,2.537,11.414-2.537,4.051,2.537,1.907,2.295v5.707l-4.134,3.054-5.211-3.054-4.31,1.594-1.767,4.131-4.156-2.671-8.333,1.405Z"/>
-    <g id="Holder" transform="translate(534 5)" opacity="0" clip-path="url(#clip-path)">
-      <g id="Holder-2" data-name="Holder" fill="#1ae209" stroke="#707070" stroke-width="1" opacity="0.203">
-        <rect width="1072" height="1129" stroke="none"/>
-        <rect x="0.5" y="0.5" width="1071" height="1128" fill="none"/>
-      </g>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 47.02687,153.51958 -0.2,-7.0365 3.6,-2.5579 2.525,2.5579 5.3,-2.5579 3.663,2.5579 11.414,-2.5579 4.051,2.5579 1.907,2.31391 v 5.75402 l -4.134,3.07917 -5.211,-3.07917 -4.31,1.60714 -1.767,4.16503 -4.156,-2.693 -8.333,1.41657 z"
+     id="Bart2"
+     style="stroke-width:1.00411129" />
+  <g
+     style="opacity:0"
+     clip-path="url(#clip-path)"
+     id="Holder"
+     transform="scale(0.11960745,0.26667634)">
+    <g
+       style="opacity:0.203;fill:#1ae209;stroke:#707070;stroke-width:1"
+       data-name="Holder"
+       id="Holder-2">
+      <rect
+         style="stroke:none"
+         y="0"
+         x="0"
+         id="rect8"
+         height="1129"
+         width="1072" />
+      <rect
+         style="fill:none"
+         id="rect10"
+         height="1128"
+         width="1071"
+         y="0.5"
+         x="0.5" />
     </g>
   </g>
 </svg>
