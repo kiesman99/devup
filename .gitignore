@@ -2,6 +2,18 @@
 # Created by https://www.gitignore.io/api/flutter,jetbrains,androidstudio
 # Edit at https://www.gitignore.io/?templates=flutter,jetbrains,androidstudio
 
+
+*.iml
+*.class
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+GeneratedPluginRegistrant.java
+
 ### AndroidStudio ###
 # Covers files to be ignored for android development using Android Studio.
 
