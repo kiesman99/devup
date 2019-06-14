@@ -1,6 +1,6 @@
 import 'package:devup/backend.dart';
 import 'package:devup/widgets/selection_chip.dart';
-import 'package:devup/widgets/setup_navigation.dart';
+import 'package:devup/widgets/navigation.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:devup/ui/personal_creation_page.dart';
 import 'package:flutter/material.dart';
@@ -110,13 +110,7 @@ class _ProgrammingCreationPageState extends State<ProgrammingCreationPage> {
           ],
         ),
       ),
-      bottomNavigationBar: SetupNavigationBar(
-        context: context,
-        nextPageCallback: () {
-
-          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalCreationPage()));
-        },
-      ),
+      bottomNavigationBar: NavigationBar(),
     );
   }
 }

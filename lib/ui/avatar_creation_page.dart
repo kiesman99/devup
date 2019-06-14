@@ -1,11 +1,12 @@
 import 'package:devup/model/user.dart';
 import 'package:devup/widgets/avtar_swipe_area.dart';
-import 'package:devup/widgets/setup_navigation.dart';
+import 'package:devup/widgets/navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
 
 //@Justin besser immer über den packagenamen als relativ importieren
 // wenn man das mischt kann get_it probleme bekommen
-import '../backend.dart';
+import 'package:devup/backend.dart';
 
 class AvatarCreatorPage extends StatefulWidget {
   @override
@@ -13,6 +14,9 @@ class AvatarCreatorPage extends StatefulWidget {
 }
 
 class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
+  Color skinColor = Color.fromRGBO(255, 204, 153, 1.0);
+  Color bodyColor = Colors.blue;
+
   @override
   Widget build(BuildContext context) {
     var parts = backend<ResourceService>().avatarParts;
@@ -23,101 +27,205 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
       //   onPressed: addUsers,
       // ),
       body: SafeArea(
-        child: Stack(
+        child: Column(
           children: <Widget>[
-            // Head
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 140,
-              height: 300,
-              child: AvatarSwipeArea(
-                swipeAeraHeight: 300,
-                imageAlign: Alignment.topCenter,
-                parts: parts.heads,
-                customColor: Color.fromRGBO(255, 204, 153, 1.0),
-                backgroundColor: Colors.blue,
+            SizedBox(
+              height: 540,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: 16,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                        child: Text(
+                      'Style your Avatar by swiping hair, eyes..',
+                      style: TextStyle(fontSize: 18),
+                    )),
+                  ),
+                  //Body
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: 140,
+                    child: AvatarSwipeArea(
+                      imageAlign: Alignment.bottomCenter,
+                      swipeAeraHeight: 140,
+                      imageHeight: 140,
+                      parts: parts.bodies,
+                      customColor: bodyColor,
+                    ),
+                  ),
+                  // Head
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 120,
+                    height: 300,
+                    child: AvatarSwipeArea(
+                      swipeAeraHeight: 300,
+                      imageAlign: Alignment.topCenter,
+                      parts: parts.heads,
+                      customColor: skinColor,
+                    ),
+                  ),
+                  //Hair
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    height: 400,
+                    child: AvatarSwipeArea(
+                      swipeAeraHeight: 400,
+                      parts: parts.hairs,
+                      imageAlign: Alignment.topCenter,
+                    ),
+                  ),
+                  //All others
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 150,
+                    bottom: 0,
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          SizedBox(
+                            height: 30,
+                          ),
+                          AvatarSwipeArea(
+                            imageAlign: Alignment.center,
+                            swipeAeraHeight: 80,
+                            imageHeight: 30,
+                            parts: parts.eyes,
+                          ),
+                          AvatarSwipeArea(
+                            imageAlign: Alignment.topCenter,
+                            swipeAeraHeight: 70,
+                            imageHeight: 50,
+                            parts: parts.noses,
+                          ),
+                          SizedBox(
+                            height: 120,
+                            child: Stack(
+                              fit: StackFit.loose,
+                              children: [
+                                Align(
+                                  alignment: Alignment(0, 0.5),
+                                  child: AvatarSwipeArea(
+                                    imageAlign: Alignment.center,
+                                    swipeAeraHeight: 120,
+                                    imageHeight: 120,
+                                    parts: parts.beards,
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment(0, -1),
+                                  child: AvatarSwipeArea(
+                                    imageAlign: Alignment.center,
+                                    swipeAeraHeight: 70,
+                                    imageHeight: 40,
+                                    imageWidth: 40,
+                                    parts: parts.mouths,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            //Hair
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 20,
-              height: 400,
-              child: AvatarSwipeArea(
-                swipeAeraHeight: 400,
-                parts: parts.hairs,
-                imageAlign: Alignment.topCenter,
-              ),
+            SizedBox(
+              height: 8,
             ),
-            //Body
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: 120,
-              child: AvatarSwipeArea(
-                imageAlign: Alignment.bottomCenter,
-                swipeAeraHeight: 120,
-                imageHeight: 120,
-                parts: parts.bodies,
-              ),
-            ),
-            //All others
-            // Positioned(
-            //   left: 0,
-            //   right: 0,
-            //   top: 150,
-            //   bottom: 0,
-            //   child: Container(
-            //     child: Column(
-            //       mainAxisSize: MainAxisSize.min,
-            //       crossAxisAlignment: CrossAxisAlignment.stretch,
-            //       children: [
-            //         SizedBox(
-            //           height: 30,
-            //         ),
-            //         AvatarSwipeArea(
-            //           imageAlign: Alignment.center,
-            //           swipeAeraHeight: 80,
-            //           imageHeight: 30,
-            //           parts: parts.eyes,
-            //         ),
-            //         AvatarSwipeArea(
-            //           imageAlign: Alignment.topCenter,
-            //           swipeAeraHeight: 80,
-            //           imageHeight: 50,
-            //           parts: parts.noses,
-            //         ),
-            //         Container(color: Colors.blue,
-            //           height: 200,
-            //           child: Stack(
-            //             children: [
-            //               AvatarSwipeArea(
-            //                 imageAlign: Alignment.bottomCenter,
-            //                 swipeAeraHeight: 120,
-            //                 imageHeight: 120,
-            //                 parts: parts.beards,
-            //               ),
-            //               AvatarSwipeArea(
-            //                 imageAlign: Alignment.center,
-            //                 swipeAeraHeight: 50,
-            //                 parts: parts.mouths,
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text('Skin:'),
+                Material(
+                  child: InkResponse(
+                    onTap: () async {
+                      var color = await openColorPicker(title: 'Pick a skin color', currentColor: skinColor);
+                      if (color != null) {
+                        setState(() {
+                          skinColor = color;
+                        });
+                      }
+                    },
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      margin: EdgeInsets.all(12),
+                      color: skinColor,
+                    ),
+                  ),
+                ),
+                Text('Body:'),
+                Material(
+                  child: InkResponse(
+                    onTap: () async {
+                      var color = await openColorPicker(title: 'Pick a body color', currentColor: bodyColor);
+                      if (color != null) {
+                        setState(() {
+                          bodyColor = color;
+                        });
+                      }
+                    },
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      margin: EdgeInsets.all(12),
+                      color: bodyColor,
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
-      bottomNavigationBar: SetupNavigationBar.noBackButton(
-        nextPageCallback: () {},
-      ),
+      bottomNavigationBar: NavigationBar.noBackButton(),
+    );
+  }
+
+  Future<Color> openColorPicker({
+    String title,
+    Color currentColor,
+  }) async {
+    return await showDialog<Color>(
+      context: context,
+      builder: (_) {
+        Color pickedColor = currentColor;
+        return AlertDialog(
+          contentPadding: const EdgeInsets.all(6.0),
+          title: Text(title),
+          content: SizedBox(
+            height: 500,
+            width: 300,
+            child: ColorPicker(
+              color: currentColor,
+              onChanged: (color) => pickedColor = color,
+            ),
+          ),
+          actions: [
+            FlatButton(
+              child: Text('Use this'),
+              onPressed: () => Navigator.of(context).pop(pickedColor),
+            ),
+            FlatButton(
+              child: Text('CANCEL'),
+              onPressed: Navigator.of(context).pop,
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -134,7 +242,9 @@ Future<void> addUsers() async {
     age: 23,
     skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
     gender: 'Male',
-    emailOrPhone: '',
+    email: '',
+    phone: '',
+    github: '',
     experience: 1,
     programmingLanguages: ['Fortran', 'C', 'Dart', 'Flutter'],
     spokenLanguages: ['German'],
@@ -150,7 +260,9 @@ Future<void> addUsers() async {
     age: 23,
     skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
     gender: 'Female',
-    emailOrPhone: '',
+    email: '',
+    phone: '',
+    github: '',
     experience: 1,
     programmingLanguages: ['Fortran', 'C'],
     spokenLanguages: ['German', 'English'],
@@ -166,7 +278,9 @@ Future<void> addUsers() async {
     age: 45,
     skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
     gender: 'Male',
-    emailOrPhone: '',
+    email: '',
+    phone: '',
+    github: '',
     experience: 0,
     programmingLanguages: ['Flutter'],
     spokenLanguages: ['German'],
@@ -182,7 +296,9 @@ Future<void> addUsers() async {
     age: 25,
     skinColor: Color.fromRGBO(255, 204, 153, 1.0).value,
     gender: 'Female',
-    emailOrPhone: '',
+    email: '',
+    phone: '',
+    github: '',
     experience: 1,
     programmingLanguages: ['Fortran', 'C', 'Dart', 'Flutter'],
     spokenLanguages: ['German'],

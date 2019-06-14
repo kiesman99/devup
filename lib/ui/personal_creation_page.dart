@@ -1,8 +1,7 @@
 import 'package:devup/backend.dart';
 import 'package:devup/widgets/choice_chips.dart';
 import 'package:devup/widgets/selection_chip.dart';
-import 'package:devup/widgets/setup_navigation.dart';
-import 'package:devup/services/database_service.dart';
+import 'package:devup/widgets/navigation.dart';
 import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +13,7 @@ class PersonalCreationPage extends StatefulWidget {
 }
 
 class _PersonalCreationPageState extends State<PersonalCreationPage> {
-  final TextStyle headingStyle = TextStyle(
-    fontSize: 20.0
-  );
+  final TextStyle headingStyle = TextStyle(fontSize: 20.0);
 
   final List<String> languages = backend<ResourceService>().languages;
   final List<String> selectedLanguages = [];
@@ -59,7 +56,7 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
                   return SelectionChip(
                     text: language,
                     onPressed: (selected) {
-                      if(selected)
+                      if (selected)
                         selectedLanguages.add(language);
                       else
                         selectedLanguages.remove(language);
@@ -89,35 +86,25 @@ class _PersonalCreationPageState extends State<PersonalCreationPage> {
             ),
             SizedBox(),
             Container(
-              margin: EdgeInsets.all(10),
-              child: Text(
-                "Personal Information",
-                style: headingStyle,
-                textAlign: TextAlign.start,
-              )
-            ),
+                margin: EdgeInsets.all(10),
+                child: Text(
+                  "Personal Information",
+                  style: headingStyle,
+                  textAlign: TextAlign.start,
+                )),
             Container(
               margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
                 maxLength: 50,
                 controller: personalInfoController,
-                decoration: InputDecoration(
-                  hintText: "Write something about yourself",
-                  icon: Icon(
-                    Icons.account_circle
-                  )
-                ),
+                decoration:
+                    InputDecoration(hintText: "Write something about yourself", icon: Icon(Icons.account_circle)),
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: SetupNavigationBar(
-        context: context,
-        nextPageCallback: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ContactCreationPage()));
-        },
-      ),
+      bottomNavigationBar: NavigationBar(),
     );
   }
 }
