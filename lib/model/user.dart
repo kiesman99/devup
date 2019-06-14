@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:jaguar_serializer/jaguar_serializer.dart';
 
-@JsonSerializable()
+part 'user.jser.dart';
+
 class User {
   String id;
   String userName;
@@ -12,82 +13,92 @@ class User {
   String chin;
   String body;
   int skinColor;
-
+  int bodyColor;
   List<String> spokenLanguages;
-
+  @pass
   GeoPoint location;
   int age;
-
   List<String> programmingLanguages;
-  String emailOrPhone;
-
+  String email;
+  String phone;
+  String github;
   String occupation;
-
   String gender;
-
   String personalInfo;
-
   int experience;
 
-  User({
-    this.userName,
-    this.hair,
-    this.eyes,
-    this.mouth,
-    this.chin,
-    this.nose,
-    this.body,
-    this.skinColor,
-    this.programmingLanguages,
-    this.age,
-    this.gender,
-    this.emailOrPhone,
-    this.occupation,
-    this.experience,
-    this.location,
-    this.personalInfo,
-    this.spokenLanguages,
-  });
+  User(
+      {this.userName,
+      this.hair,
+      this.eyes,
+      this.mouth,
+      this.chin,
+      this.nose,
+      this.body,
+      this.skinColor,
+      this.bodyColor,
+      this.programmingLanguages,
+      this.age,
+      this.gender,
+      this.occupation,
+      this.experience,
+      this.location,
+      this.personalInfo,
+      this.spokenLanguages,
+      this.email,
+      this.github,
+      this.phone,
+      this.id});
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User()
-      ..userName = json['userName'] as String
-      ..hair = json['hair'] as String
-      ..eyes = json['eyes'] as String
-      ..nose = json['nose'] as String
-      ..mouth = json['mouth'] as String
-      ..chin = json['chin'] as String
-      ..chin = json['body'] as String
-      ..skinColor = json['skinColor'] as int 
-      ..spokenLanguages =
-          (json['spokenLanguages'] as List)?.map((e) => e as String)?.toList()
-      ..location = json['location']
-      ..age = json['age'] as int
-      ..programmingLanguages = (json['programmingLanguages'] as List)
-          ?.map((e) => e as String)
-          ?.toList()
-      ..emailOrPhone = json['emailOrPhone'] as String
-      ..occupation = json['occupation'] as String
-      ..experience = json['experience'];
+  User copyWith(
+    String id,
+    String userName,
+    String hair,
+    String eyes,
+    String nose,
+    String mouth,
+    String chin,
+    String body,
+    int skinColor,
+    int bodyColor,
+    List<String> spokenLanguages,
+    GeoPoint location,
+    int age,
+    List<String> programmingLanguages,
+    String email,
+    String phone,
+    String github,
+    String occupation,
+    String gender,
+    String personalInfo,
+    int experience,
+  ) {
+    return User(
+      userName: userName ?? this.userName,
+      hair: hair ?? this.hair,
+      eyes: eyes ?? this.eyes,
+      mouth: mouth ?? this.mouth,
+      chin: chin ?? this.chin,
+      nose: nose ?? this.nose,
+      body: body ?? this.body,
+      skinColor: skinColor ?? this.skinColor,
+      bodyColor: bodyColor ?? this.bodyColor,
+      programmingLanguages: programmingLanguages ?? this.programmingLanguages,
+      age: age ?? this.age,
+      gender: gender ?? this.gender,
+      occupation: occupation ?? this.occupation,
+      experience: experience ?? this.experience,
+      location: location ?? this.location,
+      personalInfo: personalInfo ?? this.personalInfo,
+      spokenLanguages: spokenLanguages ?? this.spokenLanguages,
+      email: email ?? this.email,
+      github: github ?? this.github,
+      phone: phone ?? this.phone,
+      id: id ?? this.id,
+    );
   }
+}
 
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'userName': userName,
-      'hair': hair,
-      'eyes': eyes,
-      'nose': nose,
-      'mouth': mouth,
-      'chin': chin,
-      'body' : body,
-      'skinColor' : skinColor,
-      'spokenLanguages': spokenLanguages,
-      'location': location,
-      'age': age,
-      'programmingLanguages': programmingLanguages,
-      'emailOrPhone': emailOrPhone,
-      'occupation': occupation,
-      'experience': experience
-    };
-  }
+@GenSerializer()
+class UserJsonSerializer extends Serializer<User> with _$UserJsonSerializer {
 }

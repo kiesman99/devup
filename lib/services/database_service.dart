@@ -40,6 +40,7 @@ abstract class DatabaseService {
 
 class DatabaseServiceFireStore implements DatabaseService {
   final userCollection = Firestore.instance.collection("users");
+  final userSerializer = UserJsonSerializer();
 
   @override
   Future<bool> saveUser(User user) async {
@@ -48,10 +49,10 @@ class DatabaseServiceFireStore implements DatabaseService {
         Uuid uuid = Uuid();
         user.id = uuid.v1();
       }
-      await userCollection.document(user.id).setData(user.toJson());
+      await userCollection.document(user.id).setData(userSerializer.toMap(user));
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('userData', json.encode(user.toJson()));
+      prefs.setString('userData', json.encode(userSerializer.toMap(user)));
 
       currentUser = user;
       return true;
@@ -73,7 +74,7 @@ class DatabaseServiceFireStore implements DatabaseService {
       if (userData == null) {
         currentUser = User();
       } else {
-        return User.fromJson(json.decode(userData));
+        return userSerializer.fromMap(json.decode(userData));
       }
     }
     return currentUser;
@@ -93,7 +94,7 @@ class DatabaseServiceFireStore implements DatabaseService {
             .where((documentChange) =>
                 documentChange.type == DocumentChangeType.added)
             .map(
-              (docChange) => User.fromJson(docChange.document.data),
+              (docChange) => userSerializer.fromMap(docChange.document.data),
             )).listen( (addedDocs) => matchingUsersStream.add(addedDocs.toList()));
   }
 
