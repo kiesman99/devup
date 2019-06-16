@@ -33,6 +33,9 @@ dependencies:
   flutter_hsvcolor_picker: any
   pedantic: any
   jaguar_serializer: ^2.2.12
+  firebase_auth: any 
+  google_sign_in: any
+  flutter_facebook_login: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

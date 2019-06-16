@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "745754195457-7a1kplnipnt0c3lhmuh8bu3as6335sf1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.nllj.devup",
+            "certificate_hash": "dc140083f151bedeb95d911135ac3b0d85c613f1"
+          }
+        },
+        {
           "client_id": "745754195457-2i5v8qoqduafu0boiksiap6thuol9umt.apps.googleusercontent.com",
           "client_type": 3
         }
