@@ -28,13 +28,11 @@ class _StartupPageState extends State<StartupPage> {
   }
 
   void startListeningForLoginState() {
-    DevUpLoader.show(context);
     loginStateChangedSubscription = backend.get<UserManager>().logInStateChanged.listen(
       (userState) async {
         if (userState.isLoggedIn) {
           await replacePage(context, SwipingPage());
         } else {
-          DevUpLoader.hide();
           await replacePage(context, LoginPage());
         }
       },
@@ -56,6 +54,7 @@ class _StartupPageState extends State<StartupPage> {
   Widget build(BuildContext context) {
       return Container(
         color: Colors.white,
+        child: Center(child: CircularProgressIndicator(),),
       );
 
   }
