@@ -13,6 +13,8 @@ class AuthenticationData {
 
 class UserState {
   final bool isLoggedIn;
+  /// If the user is logged in but has no record in our Database yet
+  /// [userDataNotComplete] is set to true.
   final bool userDataNotComplete;
   final User user;
   final bool isInvalid;
@@ -32,6 +34,7 @@ abstract class UserManager {
 
   User get currentUser;
 
+  // Emits a UserState object on every change of the login state of the App
   Observable<UserState> get logInStateChanged;
 
   // User Commands

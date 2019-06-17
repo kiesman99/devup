@@ -1,6 +1,6 @@
 import 'package:devup/model/user.dart';
+import 'package:devup/ui/profile_pages/navigation.dart';
 import 'package:devup/widgets/avtar_swipe_area.dart';
-import 'package:devup/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
 

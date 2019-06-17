@@ -89,14 +89,14 @@ class AuthenticationServiceFirebase implements AuthenticationService {
           assert(false, "Should never get here");
       }
     } on PlatformException catch (ex) {
-      throw AuthenticationException(ex.message);
+      throw AuthenticationExceptionFireBase(ex.code);
     }
   }
 
   Future loginWithGoogle() async {
     _googleUser = await _googleSignIn.signIn();
     if (_googleUser == null) {
-      throw AuthenticationException('ERROR_CANCELED');
+      throw AuthenticationExceptionFireBase('ERROR_CANCELED');
     }
     _googleAuth = await _googleUser.authentication;
     _currentFirebaseUser = await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
@@ -148,7 +148,7 @@ class AuthenticationServiceFirebase implements AuthenticationService {
       }
     } on PlatformException catch (ex) {
       print("Problem creating new User bei email / password");
-      throw AuthenticationException(ex.message);
+      throw AuthenticationExceptionFireBase(ex.code);
     }
   }
 
@@ -158,7 +158,7 @@ class AuthenticationServiceFirebase implements AuthenticationService {
       await _auth.sendPasswordResetEmail(email: email);
     } on PlatformException catch (ex) {
       print('Error sending passwort reset message ${ex.toString()}');
-      throw AuthenticationException(ex.message);
+      throw AuthenticationExceptionFireBase(ex.code);
     }
   }
 

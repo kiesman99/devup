@@ -33,14 +33,16 @@ class UserManagerImplementation implements UserManager {
     // Handling login state changes
     //******************************************************************************
 
-    var auth = backend<AuthenticationService>();
+    backend<AuthenticationService>();
 
-    auth.loginState.asyncMap<UserState>((authResult) async {
+    // Start listing to changes of the login State
+    backend<AuthenticationService>().loginState.asyncMap<UserState>((authResult) async {
       if (authResult != null) {
+        // get user from our database
         _currentUser = await backend<DatabaseService>().getUser(authResult.userId);
 
         if (_currentUser == null) {
-          // This means we have a user registered  but no entry in FireStore for it so we
+          // This means we have a user registered  but no entry in FireStore for it. So we
           // try getting data from auth providers
           var newUser = await backend<AuthenticationService>().getUserDataFromProvider(authResult);
 
@@ -52,9 +54,9 @@ class UserManagerImplementation implements UserManager {
       }
       return UserState(user: null, isLoggedIn: false);
     }).listen(
-      (result) {
-        isLoggedIn = result.isLoggedIn;
-        _loginStateSubject.add(result);
+      (userState) {
+        isLoggedIn = userState.isLoggedIn;
+        _loginStateSubject.add(userState);
       },
       onError: (ex) => _loginStateSubject.add(
             UserState(
@@ -64,6 +66,10 @@ class UserManagerImplementation implements UserManager {
           ),
     );
   }
+
+  ///
+  /// Handler for the RxCommands
+  ///
 
   Future<void> _loginUser(AuthenticationData authData) async {
     await backend<AuthenticationService>().loginUser(

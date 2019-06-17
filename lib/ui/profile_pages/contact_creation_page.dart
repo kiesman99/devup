@@ -1,5 +1,5 @@
 import 'package:devup/model/user.dart';
-import 'package:devup/widgets/navigation.dart';
+import 'package:devup/ui/profile_pages/navigation.dart';
 import 'package:flutter/material.dart';
 
 class ContactCreationPage extends StatefulWidget {

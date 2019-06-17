@@ -1,5 +1,5 @@
-import 'package:devup/model/user.dart';
-import 'package:devup/ui/profile_page.dart';
+
+import 'package:devup/ui/profile_pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBar extends StatelessWidget {

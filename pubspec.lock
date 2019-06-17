@@ -98,7 +98,7 @@ packages:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0+2"
+    version: "0.8.2+3"
   code_builder:
     dependency: transitive
     description:
@@ -161,21 +161,21 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.1+6"
+    version: "0.7.0"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+3"
+    version: "0.2.5+1"
   firestore_helpers:
     dependency: "direct main"
     description:
       name: firestore_helpers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.0"
+    version: "3.0.0"
   fixnum:
     dependency: transitive
     description:
@@ -214,6 +214,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttertoast:
+    dependency: "direct main"
+    description:
+      name: fluttertoast
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   front_end:
     dependency: transitive
     description:

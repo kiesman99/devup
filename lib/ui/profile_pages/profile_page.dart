@@ -1,12 +1,19 @@
-import 'package:devup/ui/avatar_creation_page.dart';
-import 'package:devup/ui/personal_creation_page.dart';
-import 'package:devup/ui/prog_creation_page.dart';
+
+import 'package:devup/model/user.dart';
+import 'package:devup/ui/profile_pages/avatar_creation_page.dart';
+import 'package:devup/ui/profile_pages/personal_creation_page.dart';
+import 'package:devup/ui/profile_pages/prog_creation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:pedantic/pedantic.dart';
 
 import 'contact_creation_page.dart';
 
 class ProfilePage extends StatefulWidget {
+  final User user;
+
+  const ProfilePage({Key key, this.user}) : super(key: key);
+
+
   @override
   ProfilePageState createState() => ProfilePageState();
 
