@@ -12,6 +12,26 @@ import 'authentication_service_.dart';
 
 
 
+class AuthenticationExceptionFireBase extends AuthenticationException {
+  static const errorMap = <String, AuthenticationErrors>{
+    'ERROR_CANCELED': AuthenticationErrors.canceled,
+    'ERROR_WEAK_PASSWORD': AuthenticationErrors.weakPassword,
+    'ERROR_INVALID_EMAIL': AuthenticationErrors.invalidEmail,
+    'ERROR_EMAIL_ALREADY_IN_USE': AuthenticationErrors.emailAlreadyInUse,
+    'ERROR_INVALID_CREDENTIAL': AuthenticationErrors.invalidCredentials,
+    'ERROR_USER_NOT_FOUND': AuthenticationErrors.userNotFound,
+    'ERROR_USER_DISABLED': AuthenticationErrors.userDisabled,
+    'ERROR_TOO_MANY_REQUESTS': AuthenticationErrors.tooManyRequests,
+    'ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL': AuthenticationErrors.accountExistsWithDifferentCredentials
+  };
+
+  AuthenticationExceptionFireBase(String message) : super(message) {
+     code = errorMap[message] ?? AuthenticationErrors.error;
+  }
+}
+
+
+
 class AuthenticationServiceFirebase implements AuthenticationService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = new GoogleSignIn();
@@ -23,24 +43,24 @@ class AuthenticationServiceFirebase implements AuthenticationService {
   GoogleSignInAuthentication _googleAuth;
 
   /// Emits an AuthenticationResult for every FireBaseUser object that is emitted by _auth.onAuthStateChange
+  /// or null if no Firebase user is logged in
   @override
   Stream<AuthenticationResult> get loginState => _auth.onAuthStateChanged.map((firebaseUser) {
         _currentFirebaseUser = firebaseUser;
         return firebaseUser != null
-            ? new AuthenticationResult(AuthenticationState.success,
-                userId: firebaseUser.uid, userPhotoUrl: firebaseUser.photoUrl, provider: getProvider(firebaseUser))
-            : new AuthenticationResult(AuthenticationState.notLoggedIn);
+            ? new AuthenticationResult(userId: firebaseUser.uid, userPhotoUrl: firebaseUser.photoUrl, provider: getProvider(firebaseUser))
+            : null;
       });
 
   ///
-  /// if a user is logged in this function returns the data that the authentication service provides for this user a
-  /// as well as the current AuthenticationState
+  /// if a user is logged in this function returns the data that the authentication service provides for this user
+  ///  otherwise it reurns null
   @override
   Future<AuthenticationResult> checkCurrentUserLogin() async {
     _currentFirebaseUser = await _auth.currentUser();
     return _currentFirebaseUser != null
-        ? new AuthenticationResult(AuthenticationState.success, userId: _currentFirebaseUser.uid)
-        : new AuthenticationResult(AuthenticationState.notLoggedIn);
+        ? new AuthenticationResult(userId: _currentFirebaseUser.uid, userPhotoUrl: _currentFirebaseUser.photoUrl, provider: getProvider(_currentFirebaseUser))
+        : null;
   }
 
   ///
@@ -67,17 +87,16 @@ class AuthenticationServiceFirebase implements AuthenticationService {
           break;
         default:
           assert(false, "Should never get here");
-          return new AuthenticationResult(AuthenticationState.error);
       }
     } on PlatformException catch (ex) {
-      throw AuthenticationException(ex.message.toString(), 0);
+      throw AuthenticationException(ex.message);
     }
   }
 
   Future loginWithGoogle() async {
     _googleUser = await _googleSignIn.signIn();
     if (_googleUser == null) {
-      return new AuthenticationResult(AuthenticationState.canceled);
+      throw AuthenticationException('ERROR_CANCELED');
     }
     _googleAuth = await _googleUser.authentication;
     _currentFirebaseUser = await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
@@ -125,22 +144,21 @@ class AuthenticationServiceFirebase implements AuthenticationService {
     try {
       _currentFirebaseUser = await _auth.createUserWithEmailAndPassword(email: email.trim(), password: password);
       if (_currentFirebaseUser != null) {
-        return new AuthenticationResult(AuthenticationState.success, userId: _currentFirebaseUser.uid);
+        return new AuthenticationResult(userId: _currentFirebaseUser.uid);
       }
-      throw AuthenticationException("Problem creating new User", 0);
     } on PlatformException catch (ex) {
-      throw AuthenticationException(ex.message.toString(), 0);
+      print("Problem creating new User bei email / password");
+      throw AuthenticationException(ex.message);
     }
   }
 
   @override
-  Future<bool> sendPasswordResetMessage(String email) async {
+  Future sendPasswordResetMessage(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);
-      return true;
-    } on Object catch (ex) {
+    } on PlatformException catch (ex) {
       print('Error sending passwort reset message ${ex.toString()}');
-      return false;
+      throw AuthenticationException(ex.message);
     }
   }
 
@@ -167,6 +185,7 @@ class AuthenticationServiceFirebase implements AuthenticationService {
   ///
   /// returns a User object that is prepopulated with data that can be accessed from the
   /// Authentication provider
+  /// Most providers provide more data than we use here
   @override
   Future<User> getUserDataFromProvider(AuthenticationResult authResult) async {
     switch (authResult.provider) {

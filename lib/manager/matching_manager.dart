@@ -19,9 +19,9 @@ class MatchingManager {
       //push change to UI
       activeUsers.add(matchedAndNotTrashedUsers);
     });
-
-    backend<DatabaseService>().matchUsers();
   }
+
+  void match() => backend<DatabaseService>().matchUsers(backend<UserManager>().currentUser);
 
   /// This function is called after a Swipe is done
   /// We have to try if we use the start or the end of the List as first Card

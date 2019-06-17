@@ -27,34 +27,29 @@ class ObjectDoesNotExistsException implements Exception {
 }
 
 abstract class DatabaseService {
-  User currentUser;
 
   PublishSubject<List<User>> matchingUsersStream;
 
-  Future<bool> saveUser(User user);
+  Future<bool> updateUser(User user);
 
-  Future<User> getCurrentUser();
+  Future<User> getUser(String userID);
 
-  void matchUsers();
+  void matchUsers(User user);
 }
 
 class DatabaseServiceFireStore implements DatabaseService {
-  final userCollection = Firestore.instance.collection("users");
-  final userSerializer = UserJsonSerializer();
+  final _userCollection = Firestore.instance.collection("users");
+  final _userSerializer = UserJsonSerializer();
 
   @override
-  Future<bool> saveUser(User user) async {
+  Future<bool> updateUser(User user) async {
     try {
       if (user.id == null) {
         Uuid uuid = Uuid();
         user.id = uuid.v1();
       }
-      await userCollection.document(user.id).setData(userSerializer.toMap(user));
+      await _userCollection.document(user.id).setData(_userSerializer.toMap(user));
 
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('userData', json.encode(userSerializer.toMap(user)));
-
-      currentUser = user;
       return true;
     } catch (e) {
       print(e);
@@ -64,37 +59,35 @@ class DatabaseServiceFireStore implements DatabaseService {
   }
 
   @override
-  User currentUser;
-
-  @override
-  Future<User> getCurrentUser() async {
-    if (currentUser == null) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      var userData = prefs.getString('userData');
-      if (userData == null) {
-        currentUser = User();
-      } else {
-        return userSerializer.fromMap(json.decode(userData));
+  Future<User> getUser(String userID) async {
+    try {
+      var userData = await _userCollection.document(userID).get();
+      if (userData.exists) {
+        return _userSerializer.fromMap(userData.data);
       }
+    } on Exception catch (ex) {
+      print(ex);
+      // TODO add some logger
     }
-    return currentUser;
+
+    return null;
   }
 
   StreamSubscription matchingUsersSubscription;
 
   @override
-  void matchUsers() async {
+  void matchUsers(User user) async {
     matchingUsersSubscription?.cancel();
 
     // Currently we don't do any matching but take the full user document collection
     // instead of userCollection we would then use a Firestore Query
-    matchingUsersSubscription = Observable(userCollection.snapshots())
+    matchingUsersSubscription = Observable(_userCollection.snapshots())
         .map<Iterable<User>>((docSnapShots) => docSnapShots.documentChanges
             // we only want initial and added documents
             .where((documentChange) =>
                 documentChange.type == DocumentChangeType.added)
             .map(
-              (docChange) => userSerializer.fromMap(docChange.document.data),
+              (docChange) => _userSerializer.fromMap(docChange.document.data),
             )).listen( (addedDocs) => matchingUsersStream.add(addedDocs.toList()));
   }
 

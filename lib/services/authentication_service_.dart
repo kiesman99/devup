@@ -6,57 +6,58 @@ import 'package:devup/model/user.dart';
 
 enum AuthenticationProvider { google, facebook, emailPassword }
 
-enum AuthenticationState {
-  success,
-  invalidCredentials,
-  canceled,
-  error,
-  notLoggedIn,
-}
-
 /// FirebaseAuthResult are emitted on each change of the authentication state of the app
 class AuthenticationResult {
-  final AuthenticationState state;
-  final String errorMessage;
   final String userId;
   final String userPhotoUrl;
   final AuthenticationProvider provider;
 
-  AuthenticationResult(
-    this.state, {
+  AuthenticationResult({
     this.userId,
     this.userPhotoUrl,
     this.provider,
-    this.errorMessage,
   });
+}
+
+enum AuthenticationErrors {
+  success,
+  invalidCredentials,
+  invalidEmail,
+  emailAlreadyInUse,
+  weakPassword,
+  userNotFound,
+  userDisabled,
+  canceled,
+  tooManyRequests,
+  accountExistsWithDifferentCredentials,
+  error,
 }
 
 /// Used to signal Authentication related errors
 class AuthenticationException implements Exception {
   final String message;
-  final int code;
+  AuthenticationErrors code;
 
-  AuthenticationException(this.message, this.code);
+  AuthenticationException(this.message);
 
-  @override
   String toString() => message;
 }
 
 
 
 abstract class AuthenticationService {
-  /// 
-  /// Emits FirebaseAuthResults on every change of the authentication state of the App
+  ///
+  /// Emits FirebaseAuthResults on every change of the authentication state of the App. If the user is not logged in it returns null
   Stream<AuthenticationResult> get loginState;
 
   ///
-  /// if a user is logged in this function returns the data that the authentication service provides for this user a
-  /// as well as the current AuthenticationState
+  /// if a user is logged in this function returns the data that the authentication service provides for this user
+  ///  otherwise it reurns null
   Future<AuthenticationResult> checkCurrentUserLogin();
 
   ///
   /// Initiates the login process. The result is emmited on the [loginState] stream
-  /// which mean the user is not yet logged in when this function returns. 
+  /// which mean the user is not yet logged in when this function returns.
   /// [provider] : which provider should be used ?
   /// [email] / [password] : only needed for AuthenticationProvider.emailPassword
   Future loginUser({
@@ -67,7 +68,7 @@ abstract class AuthenticationService {
 
   Future<AuthenticationResult> createNewUserByEmailPassword(String email, String password);
 
-  Future<bool> sendPasswordResetMessage(String email);
+  Future sendPasswordResetMessage(String email);
 
   Future logOut();
 

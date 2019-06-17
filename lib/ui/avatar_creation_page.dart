@@ -231,7 +231,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
 }
 
 Future<void> addUsers() async {
-  await backend<DatabaseService>().saveUser(User(
+  await backend<DatabaseService>().updateUser(User(
     hair: 'Hair1',
     eyes: 'Eyes1',
     nose: 'Nose1',
@@ -249,7 +249,7 @@ Future<void> addUsers() async {
     programmingLanguages: ['Fortran', 'C', 'Dart', 'Flutter'],
     spokenLanguages: ['German'],
   ));
-  await backend<DatabaseService>().saveUser(User(
+  await backend<DatabaseService>().updateUser(User(
     hair: 'Hair2',
     eyes: 'Eyes2',
     nose: 'Nose2',
@@ -267,7 +267,7 @@ Future<void> addUsers() async {
     programmingLanguages: ['Fortran', 'C'],
     spokenLanguages: ['German', 'English'],
   ));
-  await backend<DatabaseService>().saveUser(User(
+  await backend<DatabaseService>().updateUser(User(
     hair: 'Hair3',
     eyes: 'Eyes3',
     nose: 'Nose3',
@@ -285,7 +285,7 @@ Future<void> addUsers() async {
     programmingLanguages: ['Flutter'],
     spokenLanguages: ['German'],
   ));
-  await backend<DatabaseService>().saveUser(User(
+  await backend<DatabaseService>().updateUser(User(
     hair: 'Hair4',
     eyes: 'Eyes4',
     nose: 'Nose4',

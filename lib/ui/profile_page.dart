@@ -10,6 +10,8 @@ class ProfilePage extends StatefulWidget {
   @override
   ProfilePageState createState() => ProfilePageState();
 
+    // This is used from the child pages to access the state of this page
+    // to change the current page.
     static ProfilePageState of(BuildContext context) {
     return context.ancestorStateOfType(const TypeMatcher<ProfilePageState>());
   }
@@ -39,7 +41,7 @@ class ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return PageView(
       controller: _controller,
-     // physics: NeverScrollableScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       children: [
       AvatarCreatorPage(),
       PersonalCreationPage(),

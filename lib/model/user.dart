@@ -6,6 +6,8 @@ part 'user.jser.dart';
 class User {
   String id;
   String userName;
+  @ignore // We don't store the password in the database but makes it a bit more comfortable when creating the user
+  String passWord;
   String hair;
   String eyes;
   String nose;
