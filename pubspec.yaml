@@ -29,7 +29,7 @@ dependencies:
   json_annotation: any
   shared_preferences: any
   uuid: any
-  flutter_svg: 0.13.0
+  flutter_svg: any #0.13.0
   flutter_hsvcolor_picker: any
   pedantic: any
   jaguar_serializer: ^2.2.12
@@ -66,7 +66,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
 
   assets: 
-    - assets/
+    - assets/SVG/
     - assets/SVG/Eyes/
     - assets/SVG/Hair/
     - assets/SVG/Mouth/

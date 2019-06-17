@@ -12,6 +12,13 @@ class SwipingPage extends StatefulWidget {
 class _SwipingPageState extends State<SwipingPage> {
   int currentIndex = 0;
 
+
+  @override
+  void initState() {
+    backend<MatchingManager>().match();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(

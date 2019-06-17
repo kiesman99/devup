@@ -48,7 +48,7 @@ class _ResetPasswordPage extends State<ResetPasswordPage> {
                       ),
                       DevUpFormField(
                         margin: const EdgeInsets.only(top: 25.0),
-                        iconPath: "assets/images/icon_male_avatar.svg",
+                        iconPath: "assets/SVG/icon_male_avatar.svg",
                         hintText: "Email",
                         inputType: TextInputType.emailAddress,
                         onSaved: (s) => _emailAdress = s,

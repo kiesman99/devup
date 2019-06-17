@@ -30,6 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     loginStateSubscription = backend<UserManager>().logInStateChanged.listen((userState) async {
+        DevUpLoader.hide();
       if (userState.isLoggedIn) {
         if (userState.userDataNotComplete) {
           await replacePage(context, SwipingPage());
@@ -85,14 +86,14 @@ class _LoginPageState extends State<LoginPage> {
                             height: 30.0,
                           ),
                           DevUpFormField(
-                            iconPath: "assets/icon_male_avatar.svg",
+                            iconPath: "assets/SVG/icon_male_avatar.svg",
                             hintText: "Email",
                             inputType: TextInputType.emailAddress,
                             onSaved: (s) => _emailAdress = s,
                             validator: (s) => _validateEmail(s),
                           ),
                           DevUpFormField(
-                            iconPath: "assets/icon_lock_closed.svg",
+                            iconPath: "assets/SVG/icon_lock_closed.svg",
                             hintText: "Password",
                             hideText: true,
                             onSaved: (s) => _passWord = s,
@@ -109,10 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(
                             height: 10.0,
                           ),
-                          facebookLoginButton(),
-                          SizedBox(
-                            height: 5.0,
-                          ),
                           googleLoginButton(),
                           Row(
                             children: <Widget>[
@@ -120,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                                   alignment: Alignment.centerRight,
                                   child: GestureDetector(
                                     child: Text(
-                                      'Forgot Password?',
+                                      'SignUp',
                                       style: TextStyle(color: Colors.grey, fontSize: 16.0),
                                     ),
                                     onTap: () async => await pushPage(context, ProfilePage()),
@@ -204,29 +201,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  RaisedButton facebookLoginButton({EdgeInsets margin}) {
-    return RaisedButton(
-      color: Color(0xff3B5998),
-      onPressed: () {
-        DevUpLoader.show(context);
-
-        backend<UserManager>().logginUserCommand(
-          new AuthenticationData(provider: AuthenticationProvider.facebook),
-        );
-      },
-      child: Stack(alignment: AlignmentDirectional.center, overflow: Overflow.visible, children: [
-        Positioned(
-            left: 15.0,
-            child:
-                Container(width: 30.0, height: 30.0, child: SvgPicture.asset("assets/images/facebook_logo_white.svg"))),
-        Text(
-          "Login with Facebook",
-          style: const TextStyle(color: Colors.white),
-        ),
-      ]),
-    );
-  }
-
+  
   RaisedButton googleLoginButton({EdgeInsets margin}) {
     return RaisedButton(
       color: Color.fromARGB(255, 230, 230, 230),
@@ -236,15 +211,17 @@ class _LoginPageState extends State<LoginPage> {
           new AuthenticationData(provider: AuthenticationProvider.google),
         );
       },
-      child: Stack(alignment: AlignmentDirectional.center, overflow: Overflow.visible, children: [
-        Positioned(
-            left: -10.0,
-            child: Container(width: 80.0, height: 80.0, child: SvgPicture.asset("assets/google_logo.svg"))),
-        Text(
-          "Login with Google",
-          style: const TextStyle(color: const Color(0xff526270)),
-        ),
-      ]),
+      child: Center(
+        child: Row(mainAxisSize: MainAxisSize.min,
+          children: [
+          Container(width: 40.0, height: 40.0, child: SvgPicture.asset("assets/SVG/google_logo.svg")),
+          SizedBox(width: 16,),
+          Text(
+            "Login with Google",
+            style: const TextStyle(color: const Color(0xff526270)),
+          ),
+        ]),
+      ),
     );
   }
 }
