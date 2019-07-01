@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:devup/backend.dart';
 import 'package:devup/ui/login/login_page.dart';
+import 'package:devup/ui/profile_pages/profile_page.dart';
 import 'package:devup/ui/swiping_page.dart';
 import 'package:devup/widgets/devup_loader.dart';
 import 'package:devup/widgets/navigation_functions.dart';
@@ -31,7 +32,17 @@ class _StartupPageState extends State<StartupPage> {
     loginStateChangedSubscription = backend.get<UserManager>().logInStateChanged.listen(
       (userState) async {
         if (userState.isLoggedIn) {
-          await replacePage(context, SwipingPage());
+          if (userState.userDataNotComplete) {
+            replacePage(context, SwipingPage());
+            pushPage(
+                context,
+                ProfilePage(
+                  user: userState.user,
+                ));
+          } else {
+            print("Before replacing loging page with main page");
+            await replacePage(context, SwipingPage());
+          }
         } else {
           await replacePage(context, LoginPage());
         }
@@ -52,10 +63,11 @@ class _StartupPageState extends State<StartupPage> {
 
   @override
   Widget build(BuildContext context) {
-      return Container(
-        color: Colors.white,
-        child: Center(child: CircularProgressIndicator(),),
-      );
-
+    return Container(
+      color: Colors.white,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 }
