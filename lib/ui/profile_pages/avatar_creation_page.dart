@@ -9,6 +9,9 @@ import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
 import 'package:devup/backend.dart';
 
 class AvatarCreatorPage extends StatefulWidget {
+  final User tempUser;
+
+  const AvatarCreatorPage({Key key, @required this.tempUser}) : super(key: key);
   @override
   _AvatarCreatorPageState createState() => _AvatarCreatorPageState();
 }

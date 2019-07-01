@@ -52,7 +52,7 @@ class User {
       this.phone,
       this.id});
 
-  User copyWith(
+  User copyWith({
     String id,
     String userName,
     String hair,
@@ -74,7 +74,7 @@ class User {
     String gender,
     String personalInfo,
     int experience,
-  ) {
+  }) {
     return User(
       userName: userName ?? this.userName,
       hair: hair ?? this.hair,

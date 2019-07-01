@@ -1,4 +1,5 @@
 import 'package:devup/backend.dart';
+import 'package:devup/model/user.dart';
 import 'package:devup/ui/profile_pages/navigation.dart';
 import 'package:devup/widgets/choice_chips.dart';
 import 'package:devup/widgets/selection_chip.dart';
@@ -7,6 +8,9 @@ import 'package:devup/services/resource_service.dart';
 import 'package:flutter/material.dart';
 
 class PersonalCreationPage extends StatefulWidget {
+  final User tempUser;
+
+  const PersonalCreationPage({Key key, @required this.tempUser}) : super(key: key);
   @override
   _PersonalCreationPageState createState() => _PersonalCreationPageState();
 }

@@ -1,8 +1,8 @@
-
 import 'package:devup/model/user.dart';
 import 'package:devup/ui/profile_pages/avatar_creation_page.dart';
+import 'package:devup/ui/profile_pages/email_password_page.dart';
 import 'package:devup/ui/profile_pages/personal_creation_page.dart';
-import 'package:devup/ui/profile_pages/prog_creation_page.dart';
+import 'package:devup/ui/profile_pages/programming_experience_page.dart';
 import 'package:flutter/material.dart';
 import 'package:pedantic/pedantic.dart';
 
@@ -10,39 +10,55 @@ import 'contact_creation_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final User user;
+  // flag to signal the page if its in edit or creation mode
+  final bool createProfile;
 
-  const ProfilePage({Key key, this.user}) : super(key: key);
+  /// if true a extra startpage is added to enter email an password
+  final bool createProfileByEmailPassword;
 
+  const ProfilePage({
+    Key key,
+    this.createProfile,
+    this.createProfileByEmailPassword,
+    this.user,
+  }) : super(key: key);
 
   @override
   ProfilePageState createState() => ProfilePageState();
 
-    // This is used from the child pages to access the state of this page
-    // to change the current page.
-    static ProfilePageState of(BuildContext context) {
+  // This is used from the child pages to access the state of this page
+  // to change the current page.
+  static ProfilePageState of(BuildContext context) {
     return context.ancestorStateOfType(const TypeMatcher<ProfilePageState>());
   }
 }
 
 class ProfilePageState extends State<ProfilePage> {
   final _controller = PageController();
+  int _maxPages;
+  User _tempUser;
 
-  void prevPage()
-  {
-    if ( _controller.page > 0.0)
-    {
-      unawaited(_controller.previousPage(duration: kThemeAnimationDuration, curve: Curves.fastOutSlowIn));
+  @override
+  void initState() {
+    _maxPages = widget.createProfileByEmailPassword ? 4 : 3;
+    _tempUser = widget.user.copyWith();
+
+    super.initState();
+  }
+
+  void prevPage() {
+    if (_controller.page > 0.0) {
+      unawaited(_controller.previousPage(
+          duration: kThemeAnimationDuration, curve: Curves.fastOutSlowIn));
     }
   }
 
-  void nextPage()
-  {
-    if ( _controller.page < 3.0)
-    {
-      unawaited(_controller.nextPage(duration: kThemeAnimationDuration, curve: Curves.fastOutSlowIn));
+  void nextPage() {
+    if (_controller.page < _maxPages) {
+      unawaited(_controller.nextPage(
+          duration: kThemeAnimationDuration, curve: Curves.fastOutSlowIn));
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +66,22 @@ class ProfilePageState extends State<ProfilePage> {
       controller: _controller,
       physics: NeverScrollableScrollPhysics(),
       children: [
-      AvatarCreatorPage(),
-      PersonalCreationPage(),
-      ProgrammingCreationPage(),
-      ContactCreationPage(),
-    ],);
-      
+        if (widget.createProfileByEmailPassword)
+          EmailPasswordPage(
+            tempUser: _tempUser,
+          ),
+        AvatarCreatorPage(
+          tempUser: _tempUser,
+        ),
+        PersonalCreationPage(
+          tempUser: _tempUser,
+        ),
+        ProgrammingExperiencePage(tempUser: _tempUser),
+        ContactCreationPage(
+          tempUser: _tempUser,
+          onSaveUser: (user) => Navigator.of(context).pop<User>(user),
+        ),
+      ],
+    );
   }
 }
