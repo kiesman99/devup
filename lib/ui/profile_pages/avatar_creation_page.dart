@@ -29,170 +29,168 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
       //   child: Icon(Icons.add),
       //   onPressed: addUsers,
       // ),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 540,
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    top: 16,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                        child: Text(
-                      'Style your Avatar by swiping hair, eyes..',
-                      style: TextStyle(fontSize: 18),
-                    )),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 540,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  top: 16,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                      child: Text(
+                    'Style your Avatar by swiping hair, eyes..',
+                    style: TextStyle(fontSize: 18),
+                  )),
+                ),
+                //Body
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: 140,
+                  child: AvatarSwipeArea(
+                    imageAlign: Alignment.bottomCenter,
+                    swipeAeraHeight: 140,
+                    imageHeight: 140,
+                    parts: parts.bodies,
+                    customColor: bodyColor,
                   ),
-                  //Body
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: 140,
-                    child: AvatarSwipeArea(
-                      imageAlign: Alignment.bottomCenter,
-                      swipeAeraHeight: 140,
-                      imageHeight: 140,
-                      parts: parts.bodies,
-                      customColor: bodyColor,
-                    ),
+                ),
+                // Head
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  top: 120,
+                  height: 300,
+                  child: AvatarSwipeArea(
+                    swipeAeraHeight: 300,
+                    imageAlign: Alignment.topCenter,
+                    parts: parts.heads,
+                    customColor: skinColor,
                   ),
-                  // Head
-                  Positioned(
-                    left: 0,
-                    right: 0,
-                    top: 120,
-                    height: 300,
-                    child: AvatarSwipeArea(
-                      swipeAeraHeight: 300,
-                      imageAlign: Alignment.topCenter,
-                      parts: parts.heads,
-                      customColor: skinColor,
-                    ),
+                ),
+                //Hair
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  top: 0,
+                  height: 400,
+                  child: AvatarSwipeArea(
+                    swipeAeraHeight: 400,
+                    parts: parts.hairs,
+                    imageAlign: Alignment.topCenter,
                   ),
-                  //Hair
-                  Positioned(
-                    left: 0,
-                    right: 0,
-                    top: 0,
-                    height: 400,
-                    child: AvatarSwipeArea(
-                      swipeAeraHeight: 400,
-                      parts: parts.hairs,
-                      imageAlign: Alignment.topCenter,
-                    ),
-                  ),
-                  //All others
-                  Positioned(
-                    left: 0,
-                    right: 0,
-                    top: 150,
-                    bottom: 0,
-                    child: Container(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          AvatarSwipeArea(
-                            imageAlign: Alignment.center,
-                            swipeAeraHeight: 80,
-                            imageHeight: 30,
-                            parts: parts.eyes,
-                          ),
-                          AvatarSwipeArea(
-                            imageAlign: Alignment.topCenter,
-                            swipeAeraHeight: 70,
-                            imageHeight: 50,
-                            parts: parts.noses,
-                          ),
-                          SizedBox(
-                            height: 120,
-                            child: Stack(
-                              fit: StackFit.loose,
-                              children: [
-                                Align(
-                                  alignment: Alignment(0, 0.5),
-                                  child: AvatarSwipeArea(
-                                    imageAlign: Alignment.center,
-                                    swipeAeraHeight: 120,
-                                    imageHeight: 120,
-                                    parts: parts.beards,
-                                  ),
+                ),
+                //All others
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  top: 150,
+                  bottom: 0,
+                  child: Container(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        AvatarSwipeArea(
+                          imageAlign: Alignment.center,
+                          swipeAeraHeight: 80,
+                          imageHeight: 30,
+                          parts: parts.eyes,
+                        ),
+                        AvatarSwipeArea(
+                          imageAlign: Alignment.topCenter,
+                          swipeAeraHeight: 70,
+                          imageHeight: 50,
+                          parts: parts.noses,
+                        ),
+                        SizedBox(
+                          height: 120,
+                          child: Stack(
+                            fit: StackFit.loose,
+                            children: [
+                              Align(
+                                alignment: Alignment(0, 0.5),
+                                child: AvatarSwipeArea(
+                                  imageAlign: Alignment.center,
+                                  swipeAeraHeight: 120,
+                                  imageHeight: 120,
+                                  parts: parts.beards,
                                 ),
-                                Align(
-                                  alignment: Alignment(0, -1),
-                                  child: AvatarSwipeArea(
-                                    imageAlign: Alignment.center,
-                                    swipeAeraHeight: 70,
-                                    imageHeight: 40,
-                                    imageWidth: 40,
-                                    parts: parts.mouths,
-                                  ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, -1),
+                                child: AvatarSwipeArea(
+                                  imageAlign: Alignment.center,
+                                  swipeAeraHeight: 70,
+                                  imageHeight: 40,
+                                  imageWidth: 40,
+                                  parts: parts.mouths,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text('Skin:'),
-                Material(
-                  child: InkResponse(
-                    onTap: () async {
-                      var color = await openColorPicker(title: 'Pick a skin color', currentColor: skinColor);
-                      if (color != null) {
-                        setState(() {
-                          skinColor = color;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 32,
-                      height: 32,
-                      margin: EdgeInsets.all(12),
-                      color: skinColor,
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Text('Body:'),
-                Material(
-                  child: InkResponse(
-                    onTap: () async {
-                      var color = await openColorPicker(title: 'Pick a body color', currentColor: bodyColor);
-                      if (color != null) {
-                        setState(() {
-                          bodyColor = color;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 32,
-                      height: 32,
-                      margin: EdgeInsets.all(12),
-                      color: bodyColor,
-                    ),
-                  ),
-                )
               ],
-            )
-          ],
-        ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('Skin:'),
+              Material(
+                child: InkResponse(
+                  onTap: () async {
+                    var color = await openColorPicker(title: 'Pick a skin color', currentColor: skinColor);
+                    if (color != null) {
+                      setState(() {
+                        skinColor = color;
+                      });
+                    }
+                  },
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    margin: EdgeInsets.all(12),
+                    color: skinColor,
+                  ),
+                ),
+              ),
+              Text('Body:'),
+              Material(
+                child: InkResponse(
+                  onTap: () async {
+                    var color = await openColorPicker(title: 'Pick a body color', currentColor: bodyColor);
+                    if (color != null) {
+                      setState(() {
+                        bodyColor = color;
+                      });
+                    }
+                  },
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    margin: EdgeInsets.all(12),
+                    color: bodyColor,
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
       ),
       bottomNavigationBar: NavigationBar.noBackButton(),
     );

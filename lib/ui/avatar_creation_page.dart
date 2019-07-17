@@ -1,6 +1,6 @@
 import 'package:devup/model/user.dart';
+import 'package:devup/ui/profile_pages/navigation.dart';
 import 'package:devup/widgets/avtar_swipe_area.dart';
-import 'package:devup/widgets/setup_navigation.dart';
 import 'package:flutter/material.dart';
 
 //@Justin besser immer über den packagenamen als relativ importieren
@@ -115,8 +115,7 @@ class _AvatarCreatorPageState extends State<AvatarCreatorPage> {
           ],
         ),
       ),
-      bottomNavigationBar: SetupNavigationBar.noBackButton(
-        nextPageCallback: () {},
+      bottomNavigationBar: NavigationBar.noBackButton(
       ),
     );
   }

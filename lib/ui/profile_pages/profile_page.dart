@@ -1,3 +1,4 @@
+import 'package:devup/backend.dart';
 import 'package:devup/model/user.dart';
 import 'package:devup/ui/profile_pages/avatar_creation_page.dart';
 import 'package:devup/ui/profile_pages/email_password_page.dart';
@@ -62,26 +63,32 @@ class ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      controller: _controller,
-      physics: NeverScrollableScrollPhysics(),
-      children: [
-        if (widget.createProfileByEmailPassword)
-          EmailPasswordPage(
-            tempUser: _tempUser,
-          ),
-        AvatarCreatorPage(
-          tempUser: _tempUser,
+    return WillPopScope(
+      onWillPop: () async =>
+          !widget.createProfile, // on first startup don't allow to pop
+      child: SafeArea(
+        child: PageView(
+          controller: _controller,
+          physics: NeverScrollableScrollPhysics(),
+          children: [
+            if (widget.createProfileByEmailPassword)
+              EmailPasswordPage(
+                tempUser: _tempUser,
+              ),
+            AvatarCreatorPage(
+              tempUser: _tempUser,
+            ),
+            PersonalCreationPage(
+              tempUser: _tempUser,
+            ),
+            ProgrammingExperiencePage(tempUser: _tempUser),
+            ContactCreationPage(
+              tempUser: _tempUser,
+              onSaveUser: backend.get<UserManager>().updateUserCommand,
+            ),
+          ],
         ),
-        PersonalCreationPage(
-          tempUser: _tempUser,
-        ),
-        ProgrammingExperiencePage(tempUser: _tempUser),
-        ContactCreationPage(
-          tempUser: _tempUser,
-          onSaveUser: (user) => Navigator.of(context).pop<User>(user),
-        ),
-      ],
+      ),
     );
   }
 }
